@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import Menumobile from '../Menumobile/Menumobile'
+import Menumobile from '../Menumobile/Menumobile.jsx'
 
 import Logo from '../Logo/Logo'
 

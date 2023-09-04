@@ -1,8 +1,8 @@
 'use client'
-import React, { useState, useRef } from 'react'
+import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+
 import contact from '../../../public/contact1.jpg'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -14,7 +14,7 @@ export const metadata = {
 }
 
 const Contact = () => {
-	const [error, setError] = useState(null)
+
   const form = useRef()
 
 
@@ -82,7 +82,7 @@ const Contact = () => {
 					ref={form}
 					onSubmit={sendEmail}
 				>
-					{<div>{error}</div>}
+				
 					<div className='relative group '>
 						<p className='absolute -top-3 left-4 text-slate-400   w-16 flex justify-center text-[14px] group-hover:text-yellow-200/80 bg-[#111111]'>
 							Name

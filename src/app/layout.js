@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter, Roboto, Poppins } from 'next/font/google'
 import Footer from '../components/footer/Foter.jsx'
-import Navbar from '../components/navbar/Navbar'
+import Navbar from '../components/navbar/Navbar.jsx'
 
 
 const inter = Inter({ subsets: ['latin'] })
