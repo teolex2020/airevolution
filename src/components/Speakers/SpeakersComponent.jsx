@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import CartaSpeakers from '@/components/Cartaspeakers/CartaSpeakers.jsx'
 
@@ -32,9 +33,8 @@ const lector = [
 	},
 ]
 
-
 const SpeakersComponent = () => {
-  return (
+	return (
 		<>
 			<div className='w-full text-center text-3xl text-white py-10'>
 				Speakers

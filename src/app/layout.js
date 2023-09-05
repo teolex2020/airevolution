@@ -1,3 +1,4 @@
+
 import './globals.css'
 import { Inter, Roboto, Poppins } from 'next/font/google'
 import Footer from '../components/footer/Foter.jsx'
