@@ -1,51 +1,11 @@
 import React from 'react'
-
-import CartaSpeakers from '@/components/Cartaspeakers/CartaSpeakers'
-
-const lector = [
-	{
-		name: 'Artificial Intelligence',
-		photouser: '/contact.jpg',
-		position: 'AI developer',
-		descriptions:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolores fdfdfdsfdsfdfff  fdfdfdsfsda dfdafdasfdsa sdfdsfdsf fdfdsfdsaf fdfdsfds',
-	},
-	{
-		name: 'Artificial Intelligence',
-		photouser: '/contact.jpg',
-		position: 'AI developer',
-		descriptions:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolores fdfdfdsfdsfdfff  fdfdfdsfsda dfdafdasfdsa sdfdsfdsf fdfdsfdsaf fdfdsfds',
-	},
-	{
-		name: 'Artificial Intelligence',
-		photouser: '/contact.jpg',
-		position: 'AI developer',
-		descriptions:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolores fdfdfdsfdsfdfff  fdfdfdsfsda dfdafdasfdsa sdfdsfdsf fdfdsfdsaf fdfdsfds',
-	},
-	{
-		name: 'Artificial Intelligence',
-		photouser: '/contact.jpg',
-		position: 'AI developer',
-		descriptions:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolores fdfdfdsfdsfdfff  fdfdfdsfsda dfdafdasfdsa sdfdsfdsf fdfdsfdsaf fdfdsfds',
-	},
-]
+import dynamic from 'next/dynamic'
+const SpeakersComponent = dynamic(() => import('@/components/Speakers/SpeakersComponent.jsx'), {
+	loading: () => <div className='w-full text-center loader'></div>,
+})
 
 const page = () => {
-	return (
-		<>
-			<div className='w-full text-center text-3xl text-white py-10'>
-				Speakers
-			</div>
-			<div className='flex flex-wrap justify-center gap-5'>
-				{lector.map((e, i) => {
-					return <CartaSpeakers key={i} />
-				})}
-			</div>
-		</>
-	)
+	return <div><SpeakersComponent/></div>
 }
 
 export default page
