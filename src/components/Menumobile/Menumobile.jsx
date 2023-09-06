@@ -19,7 +19,11 @@ const links = [
 		title: 'Speakers',
 		url: '/speakers',
 	},
-
+	{
+		id: 4,
+		title: 'Schedule',
+		url: '/schedule',
+	},
 	{
 		id: 5,
 		title: 'Contact',

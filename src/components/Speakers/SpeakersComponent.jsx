@@ -4,18 +4,19 @@ import CartaSpeakers from '@/components/Cartaspeakers/CartaSpeakers.jsx'
 
 const lector = [
 	{
-		name: 'Artificial Intelligence',
-		photouser: '/contact.jpg',
-		position: 'AI developer',
+		name: 'Yeva Antonenko',
+		photouser: '/antonenko.jpg',
+		position: 'IWP Expert, Political Analyst.',
 		descriptions:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolores fdfdfdsfdsfdfff  fdfdfdsfsda dfdafdasfdsa sdfdsfdsf fdfdsfdsaf fdfdsfds',
+			'Philosophical and ethical aspects of the use of artificial intelligence',
 	},
 	{
-		name: 'Artificial Intelligence',
-		photouser: '/contact.jpg',
-		position: 'AI developer',
+		name: 'Andrii Ozarchuk',
+		photouser: '/ozarchuk.jpg',
+		position:
+			'Сomputer science teacher and a research associate at the STEM Education Department of the Institute of Pedagogy of the National Academy of Pedagogical Sciences of Ukraine',
 		descriptions:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolores fdfdfdsfdsfdfff  fdfdfdsfsda dfdafdasfdsa sdfdsfdsf fdfdsfdsaf fdfdsfds',
+			'Generative Artificial Intelligence: Opportunities for Education',
 	},
 	{
 		name: 'Artificial Intelligence',
@@ -41,7 +42,15 @@ const SpeakersComponent = () => {
 			</div>
 			<div className='flex flex-wrap justify-center gap-5'>
 				{lector.map((e, i) => {
-					return <CartaSpeakers key={i} />
+					return (
+						<CartaSpeakers
+							key={i}
+							name={e.name}
+							photouser={e.photouser}
+							position={e.position}
+							descriptions={e.descriptions}
+						/>
+					)
 				})}
 			</div>
 		</>

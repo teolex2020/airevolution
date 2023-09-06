@@ -1,30 +1,29 @@
 import React from 'react'
 import Image from 'next/image'
 
-const CartaSpeakers = () => {
+const CartaSpeakers = ({name, photouser, position, descriptions}) => {
 	return (
-		<div className='border rounded-md w-96 h-fit'>
-			<div className=' w-96 h-80 relative'>
+		<div className='border rounded-md w-80 h-fit'>
+			<div className=' w-full h-96 relative flex justify-center '>
 				<Image
-					src='/contact.jpg'
+					src={photouser}
 					alt=''
 					fill
 					sizes='(min-width: 500px) 50vw, 100vw'
 					priority
-					className='object-cover'
+					className='object-cover '
 				/>
 			</div>
 			<div className='w-full flex justify-center h-14 text-2xl py-3 font-semibold text-white'>
-				Artificial Intelligence
+				{name}
 			</div>
 			<hr className='opacity-30' />
-			<div className='w-full flex justify-center h-14 text-xl py-3'>AI</div>
+			<div className='w-full   overflow-hidden  text-center h-12 hover:h-fit text-lg py-3 text-black bg-white font-semibold '>
+				{position}
+			</div>
 			<hr className='opacity-30' />
-			<div className='w-full flex justify-center h-[120px] overflow-hidden text-sm px-3 py-3'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolores
-				dicta aliquam et labore hic consequuntur architecto ipsa at
-				exercitationem, incidunt, dolorum recusandae quo magnam, ab modi
-				praesentium? Nam, maxime!
+			<div className='w-full flex justify-center h-20 hover:h-fit overflow-hidden text-lg  text-white  px-3 py-3 text-center'>
+				{descriptions}
 			</div>
 		</div>
 	)
