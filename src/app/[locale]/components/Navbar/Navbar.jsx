@@ -107,7 +107,7 @@ const Navbar = ({locale}) => {
 						Sponsors
 					</button>
 				</Link>
-				<div className='w-6 h-6 relative' onClick={() => lang()}>
+				{/* <div className='w-6 h-6 relative' onClick={() => lang()}>
 					{language ? (
 						<Image
 							src='/usa.png'
@@ -127,7 +127,7 @@ const Navbar = ({locale}) => {
 							className='object-cover '
 						/>
 					)}
-				</div>
+				</div> */}
 			</div>
 		</div>
 	)

@@ -9,28 +9,28 @@ const links = [
 	{
 		id: 1,
 		title: 'Home',
-		url: '/locale',
+		url: '/',
 	},
 	{
 		id: 2,
 		title: 'About',
-		url: '/locale/about',
+		url: '/about',
 	},
 	{
 		id: 3,
 		title: 'Speakers',
-		url: '/locale/speakers',
+		url: '/speakers',
 	},
 	{
 		id: 4,
 		title: 'Schedule',
-		url: '/locale/schedule',
+		url: '/schedule',
 	},
 
 	{
 		id: 5,
 		title: 'Contact',
-		url: '/locale/contact',
+		url: '/contact',
 	},
 ]
 
@@ -81,7 +81,7 @@ const Menumobile = ({ setOpenmenu }) => {
 				{links.map((link) => (
 					<Link
 						key={link.id}
-						href={link.url}
+						href={`/en/${link.url}`}
 						className='flex items-center gap-4'
 					>
 						<p
@@ -94,7 +94,7 @@ const Menumobile = ({ setOpenmenu }) => {
 						</p>
 					</Link>
 				))}
-				<Link href='/locale/sponsors'>
+				<Link href={`/en/sponsors`}>
 					{' '}
 					<button
 						className='bg-[rgb(255,144,0)] text-black rounded-md p-1 font-semibold hover:bg-[rgb(252,158,35)] hover:font-bold'
@@ -106,7 +106,7 @@ const Menumobile = ({ setOpenmenu }) => {
 				<div className='flex space-x-3 cursor-pointer' onClick={() => lang()}>
 					<div>Language</div>
 
-					<div className='w-6 h-6 relative'>
+					{/* <div className='w-6 h-6 relative'>
 						{language ? (
 							<Image
 								src='/usa.png'
@@ -126,7 +126,7 @@ const Menumobile = ({ setOpenmenu }) => {
 								className='object-cover '
 							/>
 						)}
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>
