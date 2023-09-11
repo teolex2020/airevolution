@@ -20,7 +20,7 @@ export default function Home() {
 					questions. For example, I can provide summaries of factual topics or
 					create stories.
 				</p>
-				<Button url='/about' text='See about' className='hover:scale-105' />
+				<Button url='/en/about' text='See about' className='hover:scale-105' />
 			</div>
 			<div className='flex  flex-1  justify-center  h-[400px] md:h-[600px]  relative '>
 				<Image

@@ -23,7 +23,7 @@ const SheduleComponent = ({time, name, title}) => {
 
 			{/* <span>1.</span> */}
 			<p className='text-white text-center md:text-start max-w-3xl'>{title}</p>
-			<Link href='/speakers'>
+			<Link href='/en/speakers'>
 				{' '}
 				<div className='md:text-lg text-blue-400'>
 					(<span className='text-sm'>speaker -</span> &nbsp; {name} &nbsp; )

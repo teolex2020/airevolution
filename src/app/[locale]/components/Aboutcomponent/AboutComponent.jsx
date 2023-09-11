@@ -61,7 +61,7 @@ const AboutComponent = () => {
 						<br />
 						<br />
 					</p>
-					<Button url='/contact' text='Contact' />
+					<Button url='/en/contact' text='Contact' />
 				</div>
 			</div>
 		</>
