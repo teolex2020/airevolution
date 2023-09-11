@@ -15,8 +15,7 @@ const lector = [
 		name: 'Nataliya Stelmakh',
 		photouser: '/stelmakh.jpg',
 		position: ' Business owner',
-		descriptions:
-			'Philosophical and ethical aspects of the use of artificial intelligence',
+		descriptions: 'Artificial intelligence (AI) in e-commerce',
 	},
 	{
 		name: 'Maxim Levitskiy',
@@ -39,6 +38,13 @@ const lector = [
 			'Сomputer science teacher and a research associate at the STEM Education Department of the Institute of Pedagogy of the National Academy of Pedagogical Sciences of Ukraine',
 		descriptions:
 			'Generative Artificial Intelligence: Opportunities for Education',
+	},
+	{
+		name: 'Oksana Krasovskaya',
+		photouser: '/oksana.jpg',
+		position: 'Expert analyst at the Ukrainian Institute of Politics',
+		descriptions:
+			'Social aspects of the application of artificial intelligence technologies',
 	},
 ]
 

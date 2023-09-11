@@ -30,10 +30,17 @@ const shed = [
 		name: 'Maxim Levitskiy',
 	},
 	{
-		id: 4,
+		id: 5,
 		time: '16.00',
-		title: 'Генеративний штучний інтелект: можливості для освіти',
+		title: 'Artificial intelligence (AI) in e-commerce',
 		name: 'Nataliya Stelmakh',
+	},
+	{
+		id: 6,
+		time: '16.00',
+		title:
+			'Social aspects of the application of artificial intelligence technologies',
+		name: 'Oksana Krasovskaya',
 	},
 ]
 
@@ -66,7 +73,7 @@ const page = () => {
 				</div>
 			</div>
 			<div className='mt-5'>
-				<p className='w-full text-center text-xl md:text-3xl font-semibold'>
+				<p className='w-full text-center text-xl md:text-3xl font-semibold text-white'>
 					Schedule:
 				</p>
 				{shed.map((e) => {

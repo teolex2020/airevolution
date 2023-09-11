@@ -54,7 +54,7 @@ const ContactComponent = () => {
 		}
 	return (
 		<div>
-			<h1 className='text-xl md:text-4xl md:mb-10 text-center text-white'>
+			<h1 className='text-xl md:text-4xl mb-10 text-center text-white'>
 				Let&apos;s Keep in Touch
 			</h1>
 			<div className='flex items-center gap-10'>
@@ -81,6 +81,8 @@ const ContactComponent = () => {
 							type='text'
 							name='name'
 							required
+							minLength='3'
+							maxLength='50'
 							className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-[rgb(255,144,0)]/30 decoration-transparent '
 						/>
 					</div>
@@ -92,6 +94,8 @@ const ContactComponent = () => {
 							required
 							type='email'
 							name='email'
+							minLength='3'
+							maxLength='50'
 							className='bg-[#111111] !important border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-[rgb(255,144,0)]/30 decoration-transparent '
 						/>
 					</div>
@@ -100,10 +104,13 @@ const ContactComponent = () => {
 							Message
 						</p>
 						<textarea
-							className='w-full p-5 text-sm text-white mb-3 border border-slate-600 outline-none bg-transparent rounded-md'
+							className='w-full p-5 text-sm text-white mb-3 border border-slate-600 outline-none bg-transparent rounded-md group-hover:border-[rgb(255,144,0)]/30'
 							cols='30'
 							rows='10'
 							name='message'
+							required
+							minLength='3'
+							maxLength='100'
 						></textarea>
 					</div>
 
