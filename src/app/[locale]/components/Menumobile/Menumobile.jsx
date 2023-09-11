@@ -103,10 +103,10 @@ const Menumobile = ({ setOpenmenu }) => {
 						Sponsors
 					</button>
 				</Link>
-				<div className='flex space-x-3 cursor-pointer' onClick={() => lang()}>
+				{/* <div className='flex space-x-3 cursor-pointer' onClick={() => lang()}>
 					<div>Language</div>
 
-					{/* <div className='w-6 h-6 relative'>
+					<div className='w-6 h-6 relative'>
 						{language ? (
 							<Image
 								src='/usa.png'
@@ -126,8 +126,8 @@ const Menumobile = ({ setOpenmenu }) => {
 								className='object-cover '
 							/>
 						)}
-					</div> */}
-				</div>
+					</div>
+				</div> */}
 			</div>
 		</div>
 	)
