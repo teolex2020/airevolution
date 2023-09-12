@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import SheduleComponent from '@/app/[locale]/components/Shedule/SheduleComponent'
+import Links from '../components/Link/Link.jsx'
 
 const shed = [
 	{
@@ -57,6 +58,7 @@ const page = () => {
 					priority
 					className='object-cover  grayscale'
 				/>
+				
 				<div className='absolute z-10  left-0 bottom-0'>
 					<div className='text-xl md:text-3xl  relative  font-bold bg-[rgba(5,5,5,0.6)] p-2 rounded-r-lg md:w-[600px] text-blue-400'>
 						<span className='text-base md:text-xl font-bold '>
@@ -78,15 +80,19 @@ const page = () => {
 				</p>
 				{shed.map((e) => {
 					return (
-						<SheduleComponent
-							key={e.id}
-							time={e.time}
-							title={e.title}
-							name={e.name}
-						/>
+						<>
+							<SheduleComponent
+								key={e.id}
+								time={e.time}
+								title={e.title}
+								name={e.name}
+							/>
+							<hr className='opacity-20 py-5'/>
+						</>
 					)
 				})}
 			</div>
+		<Links/>
 		</div>
 	)
 }

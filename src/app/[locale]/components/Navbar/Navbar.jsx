@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import Menumobile from '../Menumobile/Menumobile.jsx'
-import Image from 'next/image'
+
 
 import Logo from '../Logo/Logo'
 
@@ -82,6 +82,8 @@ const Navbar = ({locale}) => {
 				</svg>
 			</div>
 			<div className='hidden md:flex items-center gap-5'>
+				
+
 				{links.map((link) => (
 					<Link
 						key={link.id}

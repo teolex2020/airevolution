@@ -32,19 +32,28 @@ const lector = [
 			'Philosophical and ethical aspects of the use of artificial intelligence',
 	},
 	{
-		name: 'Andrii Ozarchuk',
-		photouser: '/ozarchuk.jpg',
+		name: 'Timur Shemsedinov',
+		photouser: '/timur.jpg',
 		position:
-			'Сomputer science teacher and a research associate at the STEM Education Department of the Institute of Pedagogy of the National Academy of Pedagogical Sciences of Ukraine',
+			'Chief architect at Metarhia; Lecturer at KPI, KSE; CTO at Cypherband',
 		descriptions:
 			'Generative Artificial Intelligence: Opportunities for Education',
 	},
+
 	{
 		name: 'Oksana Krasovskaya',
 		photouser: '/oksana.jpg',
 		position: 'Expert analyst at the Ukrainian Institute of Politics',
 		descriptions:
 			'Social aspects of the application of artificial intelligence technologies',
+	},
+	{
+		name: 'Andrii Ozarchuk',
+		photouser: '/ozarchuk.jpg',
+		position:
+			'Сomputer science teacher and a research associate at the STEM Education Department of the Institute of Pedagogy of the National Academy of Pedagogical Sciences of Ukraine',
+		descriptions:
+			'Generative Artificial Intelligence: Opportunities for Education',
 	},
 ]
 
