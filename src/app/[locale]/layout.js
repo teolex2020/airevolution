@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar.jsx'
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -16,6 +17,7 @@ export const metadata = {
 
 
 export function generateStaticParams() {
+
 	return [{ locale: 'en' }, { locale: 'uk' }]
 }
 
@@ -24,6 +26,7 @@ export default async function RootLayout({ children, params: { locale } }) {
 	try {
 		messages = (await import(`../../../messages/${locale}.json`)).default
 	} catch (error) {
+	
 		notFound()
 	}
 
