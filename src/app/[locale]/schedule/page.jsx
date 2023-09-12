@@ -11,43 +11,44 @@ const shed = [
 		name: 'Andrii Ozarchuk',
 	},
 	{
-		id: 1,
-		time: '16.00',
-		title: 'Limits of Using LLMs in Software Development',
-		name: 'Timur Shemsedinov',
-	},
-	{
 		id: 2,
-		time: '16.00',
+		time: '16.30',
 		title:
-			'Philosophical and ethical aspects of the use of artificial intelligence',
-		name: 'Yeva Antonenko',
+			'Social aspects of the application of artificial intelligence technologies',
+		name: 'Oksana Krasovskaya',
 	},
 	{
 		id: 3,
-		time: '16.00',
+		time: '16.45',
 		title:
 			'Artificial intelligence for drones in security applications, How Artificial intelligence can enable operations in GPS-denied environments, Consideration of methods of using AI to detect and neutralize unauthorized drones, Assessment of ethical and technological aspects of using AI to control security drones ',
 		name: 'Valerii Iakovenko',
 	},
 	{
 		id: 4,
-		time: '16.00',
+		time: '17.15',
 		title: 'AI will not take your job, it will be taken by people using AI',
 		name: 'Maxim Levitskiy',
 	},
 	{
 		id: 5,
-		time: '16.00',
-		title: 'Artificial intelligence (AI) in e-commerce',
-		name: 'Nataliya Stelmakh',
+		time: '17.45',
+		title: 'Limits of Using LLMs in Software Development',
+		name: 'Timur Shemsedinov',
 	},
 	{
 		id: 6,
-		time: '16.00',
+		time: '18.15',
 		title:
-			'Social aspects of the application of artificial intelligence technologies',
-		name: 'Oksana Krasovskaya',
+			'Philosophical and ethical aspects of the use of artificial intelligence',
+		name: 'Yeva Antonenko',
+	},
+
+	{
+		id: 7,
+		time: '18.35',
+		title: 'Artificial intelligence (AI) in e-commerce',
+		name: 'Nataliya Stelmakh',
 	},
 ]
 

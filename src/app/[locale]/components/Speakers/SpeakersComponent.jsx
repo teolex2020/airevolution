@@ -35,7 +35,7 @@ const lector = [
 		name: 'Timur Shemsedinov',
 		photouser: '/timur.jpg',
 		position:
-			'Chief architect at Metarhia; Lecturer at KPI, KSE; CTO at Cypherband',
+			'Chief architect at Metarhia. Lecturer at KPI, KSE. CTO at Cypherband',
 		descriptions: 'Limits of Using LLMs in Software Development',
 	},
 
