@@ -7,6 +7,12 @@ const shed = [
 	{
 		id: 1,
 		time: '16.00',
+		title: 'Generative Artificial Intelligence: Opportunities for Education',
+		name: 'Andrii Ozarchuk',
+	},
+	{
+		id: 1,
+		time: '16.00',
 		title: 'Limits of Using LLMs in Software Development',
 		name: 'Timur Shemsedinov',
 	},
