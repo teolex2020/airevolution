@@ -36,8 +36,7 @@ const lector = [
 		photouser: '/timur.jpg',
 		position:
 			'Chief architect at Metarhia; Lecturer at KPI, KSE; CTO at Cypherband',
-		descriptions:
-			'Generative Artificial Intelligence: Opportunities for Education',
+		descriptions: 'Limits of Using LLMs in Software Development',
 	},
 
 	{

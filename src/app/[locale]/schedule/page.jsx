@@ -7,12 +7,12 @@ const shed = [
 	{
 		id: 1,
 		time: '16.00',
-		title: 'Generative Artificial Intelligence: Opportunities for Education',
-		name: 'Andrii Ozarchuk',
+		title: 'Limits of Using LLMs in Software Development',
+		name: 'Timur Shemsedinov',
 	},
 	{
 		id: 2,
-		time: '17.00',
+		time: '16.00',
 		title:
 			'Philosophical and ethical aspects of the use of artificial intelligence',
 		name: 'Yeva Antonenko',
@@ -58,7 +58,7 @@ const page = () => {
 					priority
 					className='object-cover  grayscale'
 				/>
-				
+		
 				<div className='absolute z-10  left-0 bottom-0'>
 					<div className='text-xl md:text-3xl  relative  font-bold bg-[rgba(5,5,5,0.6)] p-2 rounded-r-lg md:w-[600px] text-blue-400'>
 						<span className='text-base md:text-xl font-bold '>
@@ -87,12 +87,12 @@ const page = () => {
 								title={e.title}
 								name={e.name}
 							/>
-							<hr className='opacity-20 py-5'/>
+							<hr className='opacity-20 py-5' />
 						</>
 					)
 				})}
 			</div>
-		<Links/>
+			<Links />
 		</div>
 	)
 }
