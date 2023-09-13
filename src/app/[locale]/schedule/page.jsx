@@ -51,6 +51,14 @@ const shed = [
 		title: 'Generative Artificial Intelligence: Opportunities for Education',
 		name: 'Andrii Ozarchuk',
 	},
+	{
+		id: 8,
+		time: '18.45',
+
+		title:
+			'AI Enabling Intelligent Operations in Telecom, Huawei’s Industrial AI-Powered Quality Inspection Solution, Radio Network Intelligence for Optimal Energy Saving',
+		name: 'Heibovych Artem',
+	},
 ]
 
 

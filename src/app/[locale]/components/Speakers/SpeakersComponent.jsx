@@ -54,6 +54,13 @@ const lector = [
 		descriptions:
 			'Generative Artificial Intelligence: Opportunities for Education',
 	},
+	{
+		name: 'Heibovych Artem',
+		photouser: '/huavey.jpg',
+		position: 'Wireless Solutions Sales Expert',
+		descriptions:
+			'AI Enabling Intelligent Operations in Telecom, Huawei’s Industrial AI-Powered Quality Inspection Solution, Radio Network Intelligence for Optimal Energy Saving',
+	},
 ]
 
 const SpeakersComponent = () => {
