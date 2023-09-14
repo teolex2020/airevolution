@@ -57,7 +57,7 @@ const lector = [
 	{
 		name: 'Heibovych Artem',
 		photouser: '/huavey.jpg',
-		position: 'Wireless Solutions Sales Expert',
+		position: 'Huawei',
 		descriptions:
 			'AI Enabling Intelligent Operations in Telecom, Huawei’s Industrial AI-Powered Quality Inspection Solution, Radio Network Intelligence for Optimal Energy Saving',
 	},
