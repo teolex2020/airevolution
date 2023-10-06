@@ -10,10 +10,10 @@ import { AuthContextProvider } from '@/context/AuthContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-	title: 'Artificial Intelligence',
-	description: 'This is the description',
-}
+// export const metadata = {
+// 	title: 'Artificial Intelligence',
+// 	description: 'This is the description',
+// }
 
 
 
