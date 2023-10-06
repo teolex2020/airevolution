@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import Menumobile from '../Menumobile/Menumobile.jsx'
-
+import Signin from './Signin.jsx'
 
 import Logo from '../Logo/Logo'
 
@@ -17,21 +17,26 @@ const links = [
 		title: 'About',
 		url: '/about',
 	},
+	// {
+	// 	id: 3,
+	// 	title: 'Speakers',
+	// 	url: '/speakers',
+	// },
 	{
 		id: 3,
-		title: 'Speakers',
-		url: '/speakers',
+		title: 'AI Assistant',
+		url: '/assistant',
 	},
-	{
-		id: 4,
-		title: 'Schedule',
-		url: '/schedule',
-	},
-	{
-		id: 5,
-		title: 'Blog',
-		url: '/blog',
-	},
+	// {
+	// 	id: 4,
+	// 	title: 'Schedule',
+	// 	url: '/schedule',
+	// },
+	// {
+	// 	id: 5,
+	// 	title: 'Blog',
+	// 	url: '/blog',
+	// },
 
 	{
 		id: 6,
@@ -87,8 +92,6 @@ const Navbar = ({locale}) => {
 				</svg>
 			</div>
 			<div className='hidden md:flex items-center gap-5'>
-				
-
 				{links.map((link) => (
 					<Link
 						key={link.id}
@@ -114,6 +117,9 @@ const Navbar = ({locale}) => {
 						Sponsors
 					</button>
 				</Link>
+				<div>
+								<Signin />
+				</div>
 				{/* <div className='w-6 h-6 relative' onClick={() => lang()}>
 					{language ? (
 						<Image

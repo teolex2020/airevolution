@@ -1,9 +1,9 @@
 "use client"
-import Image from 'next/image'
+
 import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
-
+import Signin from '../Navbar/Signin'
 
 const links = [
 	{
@@ -16,22 +16,26 @@ const links = [
 		title: 'About',
 		url: '/about',
 	},
+	// {
+	// 	id: 3,
+	// 	title: 'Speakers',
+	// 	url: '/speakers',
+	// },
 	{
 		id: 3,
-		title: 'Speakers',
-		url: '/speakers',
+		title: 'AI Assistant',
+		url: '/assistant',
 	},
-	{
-		id: 4,
-		title: 'Schedule',
-		url: '/schedule',
-	},
-
-	{
-		id: 5,
-		title: 'Blog',
-		url: '/blog',
-	},
+	// {
+	// 	id: 4,
+	// 	title: 'Schedule',
+	// 	url: '/schedule',
+	// },
+	// {
+	// 	id: 5,
+	// 	title: 'Blog',
+	// 	url: '/blog',
+	// },
 
 	{
 		id: 6,
@@ -109,6 +113,9 @@ const Menumobile = ({ setOpenmenu }) => {
 						Sponsors
 					</button>
 				</Link>
+				<div>
+					<Signin />
+				</div>
 				{/* <div className='flex space-x-3 cursor-pointer' onClick={() => lang()}>
 					<div>Language</div>
 

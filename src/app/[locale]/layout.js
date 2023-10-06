@@ -1,10 +1,12 @@
+"use client"
+
 import './globals.css'
 import { Inter, Roboto, Poppins } from 'next/font/google'
 import Footer from './components/footer/Foter.jsx'
 import Navbar from './components/Navbar/Navbar.jsx'
-import { NextIntlClientProvider } from 'next-intl'
-import { notFound } from 'next/navigation'
-
+import { store } from '../store/store'
+import { Provider } from 'react-redux'
+import { AuthContextProvider } from '@/context/AuthContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,26 +23,19 @@ export function generateStaticParams() {
 	return [{ locale: 'en' }, { locale: 'uk' }]
 }
 
-export default async function RootLayout({ children, params: { locale } }) {
-	let messages
-	try {
-		messages = (await import(`../../../messages/${locale}.json`)).default
-	} catch (error) {
-	
-		notFound()
-	}
-
-
-
+export default function RootLayout({ children }) {
 	return (
-		<html lang={locale}>
+		<html>
 			<body className={inter.className}>
 				<div className='max-w-[1366px] min-h-screen mx-auto flex flex-col justify-between sm:px-16 px-4 container'>
-					<NextIntlClientProvider locale={locale} messages={messages}>
-						<Navbar locale={locale} />
-						{children}
-						<Footer />
-					</NextIntlClientProvider>
+					<AuthContextProvider>
+						<Provider store={store}>
+							<Navbar />
+							{children}
+							<Footer />
+						</Provider>
+						
+					</AuthContextProvider>
 				</div>
 			</body>
 		</html>
