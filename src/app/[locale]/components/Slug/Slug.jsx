@@ -19,7 +19,7 @@ const prompt = useSelector((state) => state.data.promptAssist)
 
 
   return (
-		<div className='w-full h-full flex gap-5'>
+		<div className='w-full h-full flex flex-col md:flex-row gap-5'>
 			{loader && <Loader />}
 			<Formik
 				initialValues={{ ass: '', message: '' }}

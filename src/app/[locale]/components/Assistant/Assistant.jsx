@@ -49,11 +49,11 @@ const Assistant = () => {
 	}
 
 	return (
-		<div className='flex justify-start h-screen w-full flex-col items-center'>
-			<h2 className='text-4xl py-10 w-full text-center font-bold'>
+		<div className='flex justify-start h-fit md:h-screen w-full flex-col items-center'>
+			<h2 className='text-2xl md:text-4xl py-10 w-full text-center font-bold'>
 				Choose an assistant
 			</h2>
-			<div className='flex flex-wrap gap-10'>
+			<div className='flex flex-col md:flex-row gap-10'>
 				{assistant.map((e) => (
 					<div
 						key={e.id}
