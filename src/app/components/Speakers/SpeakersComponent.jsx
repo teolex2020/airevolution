@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import CartaSpeakers from '@/app/[locale]/components/Cartaspeakers/CartaSpeakers.jsx'
+import CartaSpeakers from '@/app/components/Cartaspeakers/CartaSpeakers.jsx'
 
 const lector = [
 	{

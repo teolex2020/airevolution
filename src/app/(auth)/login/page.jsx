@@ -15,6 +15,9 @@ import 'react-toastify/dist/ReactToastify.css'
 const Login = () => {
 	const [inputType, setInputType] = useState(true)
 
+	
+
+
 	const router = useRouter()
 
 	const sign = async (values) => {
@@ -33,6 +36,7 @@ const Login = () => {
 	const signupWithGoogle = () => {
 		signInWithPopup(auth, Providers)
 			.then((result) => {
+				
 				// This gives you a Google Access Token. You can use it to access the Google API.
 				const credential = GoogleAuthProvider.credentialFromResult(result)
 				const token = credential.accessToken
@@ -42,6 +46,7 @@ const Login = () => {
 				return router.push('/')
 			})
 			.catch((error) => {
+				console.log(error)
 				// Handle Errors here.
 				toast.error('User not registered')
 			})

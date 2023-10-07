@@ -46,7 +46,7 @@ const links = [
 
 const Menumobile = ({ setOpenmenu }) => {
 	const [active, setActive] = useState()
-		const [language, setLanguage] = useState(true)
+
 
 	const activeclass = (e) => {
 		setActive(e)
@@ -62,9 +62,7 @@ const Menumobile = ({ setOpenmenu }) => {
 			setOpenmenu(false)
 		}
 
-			const lang = () => {
-				setLanguage(!language)
-			}
+	
 
 	return (
 		<div className='fixed bg-[#111111] top-0 bottom-0  right-0 w-72 z-10'>
@@ -91,7 +89,7 @@ const Menumobile = ({ setOpenmenu }) => {
 				{links.map((link) => (
 					<Link
 						key={link.id}
-						href={`/en/${link.url}`}
+						href={link.url}
 						className='flex items-center gap-4'
 					>
 						<p
@@ -104,7 +102,7 @@ const Menumobile = ({ setOpenmenu }) => {
 						</p>
 					</Link>
 				))}
-				<Link href={`/en/sponsors`}>
+				<Link href={`/sponsors`}>
 					{' '}
 					<button
 						className='bg-[rgb(255,144,0)] text-black rounded-md p-1 font-semibold hover:bg-[rgb(252,158,35)] hover:font-bold'

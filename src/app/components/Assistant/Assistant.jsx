@@ -38,14 +38,14 @@ const Assistant = () => {
 
 	useEffect(() => {
 		if (user === null) {
-			redirect('/en/login')
+			redirect('/login')
 		}
 	}, [user])
 
 	const assist = (e) => {
 		dispatch(TitleAssist(e.name))
 		dispatch(PromptAssist(e.promptsystem))
-		router.push(`/en/ai/${e}`)
+		router.push(`/ai/${e}`)
 	}
 
 	return (

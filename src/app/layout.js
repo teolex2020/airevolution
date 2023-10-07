@@ -1,10 +1,10 @@
 "use client"
 
 import './globals.css'
-import { Inter, Roboto, Poppins } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import Footer from './components/footer/Foter.jsx'
 import Navbar from './components/Navbar/Navbar.jsx'
-import { store } from '../store/store'
+import { store } from './store/store'
 import { Provider } from 'react-redux'
 import { AuthContextProvider } from '@/context/AuthContext'
 
@@ -18,10 +18,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 
 
-export function generateStaticParams() {
 
-	return [{ locale: 'en' }, { locale: 'uk' }]
-}
 
 export default function RootLayout({ children }) {
 	return (

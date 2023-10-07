@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import Image from 'next/image'
 
-import contact from '../../../../../public/contact1.jpg'
+import contact from '../../../../public/contact1.jpg'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 

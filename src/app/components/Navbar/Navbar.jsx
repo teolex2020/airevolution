@@ -45,8 +45,8 @@ const links = [
 	},
 ]
 
-const Navbar = ({locale}) => {
-	const [language, setLanguage] = useState(true)
+const Navbar = () => {
+
 
 	const [active, setActive] = useState()
 	const [openmenu, setOpenmenu] = useState(false)
@@ -62,15 +62,13 @@ const Navbar = ({locale}) => {
 		setOpenmenu(true)
 	}
 
-	const lang = () => {
-		setLanguage(!language)
-	}
+
 
 
 
 	return (
 		<div className='h-20 flex justify-between items-center my-2 '>
-			{openmenu && <Menumobile setOpenmenu={setOpenmenu} locale={locale} />}
+			{openmenu && <Menumobile setOpenmenu={setOpenmenu}  />}
 			<Link href='/' className='text-bold text-3xl'>
 				<Logo />
 			</Link>
@@ -95,7 +93,7 @@ const Navbar = ({locale}) => {
 				{links.map((link) => (
 					<Link
 						key={link.id}
-						href={`/en/${link.url}`}
+						href={link.url}
 						className='flex items-center gap-4'
 					>
 						<p
@@ -108,7 +106,7 @@ const Navbar = ({locale}) => {
 						</p>
 					</Link>
 				))}
-				<Link href={`/en/sponsors`}>
+				<Link href={`/sponsors`}>
 					{' '}
 					<button
 						className='bg-[rgb(255,144,0)] text-black rounded-md p-1 font-semibold hover:bg-[rgb(252,158,35)] hover:font-bold'

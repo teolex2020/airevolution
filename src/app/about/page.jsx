@@ -1,7 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 const AboutComponent = dynamic(
-	() => import('@/app/[locale]/components/Aboutcomponent/AboutComponent.jsx'),
+	() => import('@/app/components/Aboutcomponent/AboutComponent.jsx'),
 	{
 		loading: () => <div className='w-full text-center loader'></div>,
 	}

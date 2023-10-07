@@ -10,7 +10,7 @@ const Signin = () => {
 	const router = useRouter()
 
 	const sign = () => {
-		router.push('/en/login')
+		router.push('/login')
 	}
 
 	const singout = () => {
@@ -38,7 +38,7 @@ const Signin = () => {
 	}
 
 	return (
-		<div className='' onClick={() => openmenumobil()}>
+		<div className='' >
 			<button
 				onClick={() => sign()}
 				className=' bg-red-700 shadow2 px-3 py-1 hover:shadow1 rounded-md cursor-pointer text-center  elem arrownone'

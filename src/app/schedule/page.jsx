@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import SheduleComponent from '@/app/[locale]/components/Shedule/SheduleComponent'
+import SheduleComponent from '@/app/components/Shedule/SheduleComponent'
 import Links from '../components/Link/Link.jsx'
 
 const shed = [

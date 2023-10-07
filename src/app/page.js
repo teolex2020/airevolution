@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import Hero from '../../../public/ai1.jpg'
-import Button from '@/app/[locale]/components/Button/Button'
+import Hero from '../../public/ai1.jpg'
+import Button from '@/app/components/Button/Button'
 
 
 

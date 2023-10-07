@@ -1,6 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-const SpeakersComponent = dynamic(() => import('@/app/[locale]/components/Speakers/SpeakersComponent.jsx'), {
+const SpeakersComponent = dynamic(() => import('@/app/components/Speakers/SpeakersComponent.jsx'), {
 	loading: () => <div className='w-full text-center loader'></div>,
 })
 

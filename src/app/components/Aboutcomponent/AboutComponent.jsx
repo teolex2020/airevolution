@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import Button from '@/app/[locale]/components/Button/Button'
-import pexel from '../../../../../public/ai1.png'
+import Button from '@/app/components/Button/Button'
+import pexel from '../../../../public/ai1.png'
 
 const AboutComponent = () => {
 	return (
