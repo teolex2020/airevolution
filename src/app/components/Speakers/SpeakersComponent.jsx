@@ -5,7 +5,8 @@ import CartaSpeakers from '@/app/components/Cartaspeakers/CartaSpeakers.jsx'
 const lector = [
 	{
 		name: 'Valerii Iakovenko',
-		photouser: '/iakovenko.jpg',
+		photouser:
+			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773302/iakovenko_szuxoc.jpg',
 		position:
 			'Drone Expert у Food and Agriculture Organization of the United Nations (FAO), Co-founder у FarmFleet',
 		descriptions:
@@ -13,27 +14,31 @@ const lector = [
 	},
 	{
 		name: 'Nataliya Stelmakh',
-		photouser: '/stelmakh.jpg',
+		photouser:
+			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773332/stelmakh_xlmaab.jpg',
 		position: ' Business owner',
 		descriptions: 'Artificial intelligence (AI) in e-commerce',
 	},
 	{
 		name: 'Maxim Levitskiy',
-		photouser: '/levitskiy.jpeg',
+		photouser:
+			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773311/levitskiy_fhea65.jpg',
 		position: 'SymbiotAI CEO',
 		descriptions:
 			'AI will not take your job, it will be taken by people using AI',
 	},
 	{
 		name: 'Yeva Antonenko',
-		photouser: '/antonenko.jpg',
+		photouser:
+			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773281/antonenko_gji64l.jpg',
 		position: 'UIP Expert, Political Analyst.',
 		descriptions:
 			'Philosophical and ethical aspects of the use of artificial intelligence',
 	},
 	{
 		name: 'Timur Shemsedinov',
-		photouser: '/timur.jpg',
+		photouser:
+			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773508/timur_g6aqin.jpg',
 		position:
 			'Chief architect at Metarhia. Lecturer at KPI, KSE. CTO at Cypherband',
 		descriptions: 'Limits of Using LLMs in Software Development',
@@ -41,14 +46,16 @@ const lector = [
 
 	{
 		name: 'Oksana Krasovskaya',
-		photouser: '/oksana.jpg',
+		photouser:
+			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773321/oksana_idkdiu.jpg',
 		position: 'Expert analyst at the Ukrainian Institute of Politics',
 		descriptions:
 			'Social aspects of the application of artificial intelligence technologies',
 	},
 	{
 		name: 'Andrii Ozarchuk',
-		photouser: '/ozarchuk.jpg',
+		photouser:
+			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773325/ozarchuk_ebdrlg.jpg',
 		position:
 			'Сomputer science teacher and a research associate at the STEM Education Department of the Institute of Pedagogy of the National Academy of Pedagogical Sciences of Ukraine',
 		descriptions:
@@ -56,7 +63,8 @@ const lector = [
 	},
 	{
 		name: 'Heibovych Artem',
-		photouser: '/huavey.jpg',
+		photouser:
+			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773293/huavey_qj4swf.jpg',
 		position: 'Huawei',
 		descriptions:
 			'AI Enabling Intelligent Operations in Telecom, Huawei’s Industrial AI-Powered Quality Inspection Solution, Radio Network Intelligence for Optimal Energy Saving',

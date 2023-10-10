@@ -12,11 +12,11 @@ const links = [
 		title: 'Home',
 		url: '/',
 	},
-	{
-		id: 2,
-		title: 'About',
-		url: '/about',
-	},
+	// {
+	// 	id: 2,
+	// 	title: 'About',
+	// 	url: '/about',
+	// },
 	// {
 	// 	id: 3,
 	// 	title: 'Speakers',
@@ -26,6 +26,11 @@ const links = [
 		id: 3,
 		title: 'AI Assistant',
 		url: '/assistant',
+	},
+	{
+		id: 4,
+		title: 'Prompt',
+		url: '/prompt',
 	},
 	// {
 	// 	id: 4,

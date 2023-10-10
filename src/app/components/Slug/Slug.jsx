@@ -33,7 +33,7 @@ const prompt = useSelector((state) => state.data.promptAssist)
 						.min(1, 'Should be 1 chars minimum.')
 						.max(10000, 'Must be 10000 characters or less'),
 				})}
-				onSubmit={async (values, {resetForm}) => {
+				onSubmit={async (values) => {
   
 	setLoader(true)
 	try {
@@ -47,7 +47,7 @@ const prompt = useSelector((state) => state.data.promptAssist)
 		messages.push(
 			{
 				role: 'system',
-				content: `Hello, I am your ${ass} ${prompt} `,
+				content: `From now on, you are a  ${ass} ${prompt} `,
 			},
 			{ role: 'user', content: message }
 		)
