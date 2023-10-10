@@ -22,7 +22,7 @@ export default function Home() {
 				</p>
 				<div>
 					<Button
-						url='/en/assistant'
+						url='/assistant'
 						text='AI assistant'
 						classes={'hover:scale-105 hover:bg-[rgb(255,160,5)] text-xl'}
 					/> 
