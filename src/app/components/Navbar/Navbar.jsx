@@ -33,6 +33,11 @@ const links = [
 		url: '/prompt',
 	},
 	// {
+	// 	id: 5,
+	// 	title: 'Efficient Day',
+	// 	url: '/day',
+	// },
+	// {
 	// 	id: 4,
 	// 	title: 'Schedule',
 	// 	url: '/schedule',
@@ -49,6 +54,8 @@ const links = [
 		url: '/contact',
 	},
 ]
+
+
 
 const Navbar = () => {
 

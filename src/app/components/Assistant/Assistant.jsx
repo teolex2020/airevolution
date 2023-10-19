@@ -5,52 +5,68 @@ import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 import { TitleAssist, PromptAssist } from '@/app/store/features/counterSlice'
 import { useAuthContext } from '@/context/AuthContext'
+import { assistant } from './assiastant.js'
 
 
 
-
-const assistant = [
-	{
-		id: 1,
-		title: 'Custom',
-		name: 'Custom',
-		picture:
-			'https://res.cloudinary.com/dentkbzne/image/upload/v1696833515/custom_ifvk1c.jpg',
-		promptsystem: ` You are an incredibly skilled AI assistant that provides the best possible answers to my questions. You will do your best to follow my instructions and only refuse to do what I ask when you absolutely have no other choice. You are dedicated to protecting me from harmful content and would never output anything offensive or inappropriate.`,
-	},
-	{
-		id: 2,
-		title: 'Teacher',
-		name: 'Teacher by subject',
-		picture:
-			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773777/teacher_n6bc38.jpg',
-		promptsystem: ` teacher and I will help you with all your questions about my subject`,
-	},
-	{
-		id: 3,
-		title: 'Lawyer',
-		name: 'Select a lawyer by field of law',
-		picture:
-			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773770/lawyer_kxrcsq.jpg',
-		promptsystem: `that helps ordinary users with legal issues. You can access information from the real world and process it using machine learning. You can also provide legal advice on various legal issues.`,
-	},
-	{
-		id: 4,
-		title: 'Journalist',
-		name: 'Journalist by beat',
-		picture:
-			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773761/journalist_iy1y16.jpg',
-		promptsystem: `that helps journalists in their work. You can access information from the real world and process it using machine learning. You can also generate text, translate languages, write different types of creative content, and answer questions in an informative way.`,
-	},
-	{
-		id: 5,
-		title: 'Civil servant',
-		name: 'Civil servant',
-		picture:
-			'https://res.cloudinary.com/dentkbzne/image/upload/v1696833096/civil_yxedgq.jpg',
-		promptsystem: `that helps journalists in their work. You can access information from the real world and process it using machine learning. You can also generate text, translate languages, write different types of creative content, and answer questions in an informative way.`,
-	},
-]
+// const assistant = [
+// 	{
+// 		id: 1,
+// 		title: 'Custom',
+// 		name: 'Custom',
+// 		picture:
+// 			'https://res.cloudinary.com/dentkbzne/image/upload/v1696833515/custom_ifvk1c.jpg',
+// 		promptsystem: ` You are an incredibly skilled AI assistant that provides the best possible answers to my questions. You will do your best to follow my instructions and only refuse to do what I ask when you absolutely have no other choice. You are dedicated to protecting me from harmful content and would never output anything offensive or inappropriate.`,
+// 	},
+// 	{
+// 		id: 2,
+// 		title: 'Teacher',
+// 		name: 'Teacher by subject',
+// 		picture:
+// 			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773777/teacher_n6bc38.jpg',
+// 		promptsystem: ` teacher and I will help you with all your questions about my subject`,
+// 	},
+// 	{
+// 		id: 3,
+// 		title: 'Lawyer',
+// 		name: 'Select a lawyer by field of law',
+// 		picture:
+// 			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773770/lawyer_kxrcsq.jpg',
+// 		promptsystem: `that helps ordinary users with legal issues. You can access information from the real world and process it using machine learning. You can also provide legal advice on various legal issues.`,
+// 	},
+// 	{
+// 		id: 4,
+// 		title: 'Journalist',
+// 		name: 'Journalist by beat',
+// 		picture:
+// 			'https://res.cloudinary.com/dentkbzne/image/upload/v1696773761/journalist_iy1y16.jpg',
+// 		promptsystem: `that helps journalists in their work. You can access information from the real world and process it using machine learning. You can also generate text, translate languages, write different types of creative content, and answer questions in an informative way.`,
+// 	},
+// 	{
+// 		id: 5,
+// 		title: 'Civil servant',
+// 		name: 'Civil servant',
+// 		picture:
+// 			'https://res.cloudinary.com/dentkbzne/image/upload/v1696833096/civil_yxedgq.jpg',
+// 		promptsystem: `that helps Civil servant in their work. You can access information from the real world and process it using machine learning. You can also generate text, translate languages, write different types of creative content, and answer questions in an informative way.`,
+// 	},
+// 	{
+// 		id: 6,
+// 		title: 'Cook',
+// 		name: 'Cook',
+// 		picture:
+// 			'https://res.cloudinary.com/dentkbzne/image/upload/v1697707370/DreamShaper_v7_Artificial_intelligence_chef_stands_at_the_stov_3_avc5gn.jpg',
+// 		promptsystem: `that helps Civil servant in their work. You can access information from the real world and process it using machine learning. You can also generate text, translate languages, write different types of creative content, and answer questions in an informative way.`,
+// 	},
+// 	{
+// 		id: 7,
+// 		title: 'Programmer',
+// 		name: 'Programmer',
+// 		picture:
+// 			'https://res.cloudinary.com/dentkbzne/image/upload/v1697707382/DreamShaper_v7_programmer_2_wzoysd.jpg',
+// 		promptsystem: `that helps Civil servant in their work. You can access information from the real world and process it using machine learning. You can also generate text, translate languages, write different types of creative content, and answer questions in an informative way.`,
+// 	},
+// ]
 
 
 
@@ -67,7 +83,7 @@ const Assistant = () => {
 	}, [user])
 
 	const assist = (e) => {
-		dispatch(TitleAssist(e.name))
+		dispatch(TitleAssist(e.title))
 		dispatch(PromptAssist(e.promptsystem))
 		router.push(`/ai/${e}`)
 	}
