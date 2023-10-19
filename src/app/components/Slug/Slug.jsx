@@ -38,12 +38,11 @@ const prompt = useSelector((state) => state.data.promptAssist)
 					// .max(10000, 'Must be 10000 characters or less')
 				})}
 				onSubmit={async (values) => {
-			
 					setLoader(true)
 					try {
-						const { ass } = values 
-						 
-						console.log("input",messageInput)
+						const { ass } = values
+
+						console.log('input', messageInput)
 						if (messages.length === 0) {
 							messages.push(
 								{
@@ -61,7 +60,6 @@ const prompt = useSelector((state) => state.data.promptAssist)
 
 						await fetchGptAnswer(setMessages, messages, setLoader)
 						setMessageInput('')
-						
 					} catch (error) {
 						console.error('Error occurred:', error)
 					}
@@ -75,7 +73,7 @@ const prompt = useSelector((state) => state.data.promptAssist)
 						<Field
 							as='textarea'
 							name='ass'
-							className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-200  w-full text-sm  group-hover:shadow1 decoration-transparent flex-1 h-full elem scroll'
+							className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-200  w-full text-sm  group-hover:shadow1 decoration-transparent flex-1 min-h-[150px] h-full elem scroll '
 						/>
 						<ErrorMessage name='ass'>
 							{(msg) => <div className='text-red-500 text-sm'>{msg}</div>}
@@ -86,7 +84,7 @@ const prompt = useSelector((state) => state.data.promptAssist)
 							Message
 						</p>
 						<Field
-							className='w-full p-5 text-sm flex-1 text-white mb-3 border border-slate-600 outline-none bg-transparent rounded-md group-hover:group-hover:shadow1 elem scroll h-full '
+							className='w-full p-5 text-sm flex-1 text-white mb-3 border border-slate-600 outline-none bg-transparent rounded-md group-hover:group-hover:shadow1 elem scroll h-full min-h-[150px] '
 							as='textarea'
 							name='message'
 							value={messageInput}
@@ -102,14 +100,14 @@ const prompt = useSelector((state) => state.data.promptAssist)
 					</div>
 					<button
 						type='submit'
-						className='relative border border-slate-600 inline-block py-2 text-[#a1a1a1] text-base overflow-hidden  rounded-md  hover:text-white w-full hover:shadow1 h-20'
+						className='relative border border-slate-600 inline-block py-2 text-[#a1a1a1] text-base overflow-hidden  rounded-md  hover:text-white w-full hover:shadow1 md:h-20'
 					>
 						Send
 					</button>
 				</Form>
 			</Formik>
 			<div className='border border-slate-600 rounded-lg flex-1 p-5 h-[470px]  elem scroll relative'>
-				{messages &&
+				{messages ?
 					messages
 						.slice(1)
 						.map((e, i) => (
@@ -120,7 +118,7 @@ const prompt = useSelector((state) => state.data.promptAssist)
 								assis={assis}
 								user={user}
 							/>
-						))}
+						)):"Answer"}
 			</div>
 		</div>
 	)
