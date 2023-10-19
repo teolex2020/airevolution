@@ -107,7 +107,7 @@ const prompt = useSelector((state) => state.data.promptAssist)
 				</Form>
 			</Formik>
 			<div className='border border-slate-600 rounded-lg flex-1 p-5 h-[470px]  elem scroll relative'>
-				{messages ?
+				{messages.length !== 0 ? (
 					messages
 						.slice(1)
 						.map((e, i) => (
@@ -118,7 +118,10 @@ const prompt = useSelector((state) => state.data.promptAssist)
 								assis={assis}
 								user={user}
 							/>
-						)):"Answer"}
+						))
+				) : (
+					<div>answer to question</div>
+				)}
 			</div>
 		</div>
 	)
