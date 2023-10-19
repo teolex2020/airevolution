@@ -31,11 +31,11 @@ const prompt = useSelector((state) => state.data.promptAssist)
 			<Formik
 				initialValues={{ ass: '', message: '' }}
 				validationSchema={Yup.object({
-					ass: Yup.string().max(30, 'Must be 30 characters or less'),
+					ass: Yup.string().max(30, 'Must be 30 characters or less').max(10000, 'Must be 10000 characters or less'),
 					message: Yup.string()
 						// .required('Please enter your  message...')
-						.min(1, 'Should be 1 chars minimum.'),
-					// .max(10000, 'Must be 10000 characters or less')
+						.min(1, 'Should be 1 chars minimum.')
+					.max(10000, 'Must be 10000 characters or less'),
 				})}
 				onSubmit={async (values) => {
 					setLoader(true)
@@ -68,7 +68,7 @@ const prompt = useSelector((state) => state.data.promptAssist)
 				<Form className='flex-1 gap-5 flex flex-col h-[470px] justify-between'>
 					<div className='relative group h-full '>
 						<p className='absolute -top-3 left-4 text-slate-400   w-fit px-2 flex justify-center text-[14px] group-hover:text-white bg-[#111111] rounded-lg'>
-							Prompt
+							Prompt (optional)
 						</p>
 						<Field
 							as='textarea'
