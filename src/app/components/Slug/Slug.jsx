@@ -1,5 +1,5 @@
 "use client"
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
@@ -7,20 +7,27 @@ import Loader from '../Loader/Loader'
 import { fetchGptAnswer } from '../../api/openaiApi.js'
 import Message from './Message'
 import { useAuthContext } from '@/context/AuthContext'
+import { useRouter } from 'next/navigation'
+
 
 const Slug = () => {
 const [loader, setLoader] = useState(false)
 const [messages, setMessages] = useState([])
 const [messageInput, setMessageInput] = useState('')
+const route = useRouter()
 
-console.log(messages)
 
 const assis = useSelector((state) => state.data.titleAssist)
 const prompt = useSelector((state) => state.data.promptAssist)
 
 	const { user } = useAuthContext()
 
-
+ useEffect(() => {
+	
+		if (!assis) {
+			route.push('/assistant')
+		}
+ }, [assis, route])
 
   return (
 		<div className='w-full h-full flex flex-col md:flex-row gap-5 relative pt-10'>
@@ -31,18 +38,17 @@ const prompt = useSelector((state) => state.data.promptAssist)
 			<Formik
 				initialValues={{ ass: '', message: '' }}
 				validationSchema={Yup.object({
-					ass: Yup.string().max(30, 'Must be 30 characters or less').max(10000, 'Must be 10000 characters or less'),
+					ass: Yup.string().max(10000, 'Must be 10000 characters or less'),
 					message: Yup.string()
 						// .required('Please enter your  message...')
 						.min(1, 'Should be 1 chars minimum.')
-					.max(10000, 'Must be 10000 characters or less'),
+						.max(10000, 'Must be 10000 characters or less'),
 				})}
 				onSubmit={async (values) => {
 					setLoader(true)
 					try {
 						const { ass } = values
 
-						console.log('input', messageInput)
 						if (messages.length === 0) {
 							messages.push(
 								{
@@ -107,21 +113,25 @@ const prompt = useSelector((state) => state.data.promptAssist)
 				</Form>
 			</Formik>
 			<div className='border border-slate-600 rounded-lg flex-1 p-5 h-[470px]  elem scroll relative'>
-				{messages.length !== 0 ? (
-					messages
-						.slice(1)
-						.map((e, i) => (
-							<Message
-								key={i}
-								role={e.role}
-								content={e.content}
-								assis={assis}
-								user={user}
-							/>
-						))
-				) : (
-					<div>answer to question</div>
-				)}
+				
+					{messages.length !== 0 ? (
+					
+						messages
+							.slice(1)
+							.map((e, i) => (
+								<Message
+									key={i}
+									role={e.role}
+									content={e.content}
+									assis={assis}
+									user={user}
+								/>
+						
+							))
+					) : (
+						<div>answer to question</div>
+					)}
+				
 			</div>
 		</div>
 	)
