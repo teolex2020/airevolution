@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html>
 			<body className={inter.className}>
-				<div className='max-w-[1366px] min-h-screen mx-auto flex flex-col justify-between sm:px-16 px-4 container'>
+				<div className='max-w-[1366px]  h-full mx-auto flex flex-col justify-between sm:px-16 px-4 container'>
 					<AuthContextProvider>
 						<Provider store={store}>
 							<Navbar />

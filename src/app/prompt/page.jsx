@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 const Prompt = dynamic(
 	() => import('@/app/components/Prompt/Prompt.jsx'),
 	{
-		loading: () => <div className='w-full text-center loader'></div>,
+		loading: () => <div className='w-full text-center '></div>,
 	}
 )
 

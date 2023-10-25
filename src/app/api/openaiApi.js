@@ -7,29 +7,26 @@ const openai = new OpenAI({
 
 export const fetchGptAnswer = async (
 	setMessages,
-	messages,
+	data,
 
 	setLoader
 ) => {
-	
 	try {
 		const res = await openai.chat.completions.create({
 			model: 'gpt-3.5-turbo',
 			// model: 'gpt-4',
-			messages: messages,
+			messages: data,
 			temperature: 0,
 		})
 
 		const answer = res.choices[0].message.content
-   
+
 		setMessages((prevMessages) => [
 			...prevMessages,
 			{ role: 'assistant', content: answer },
 		])
 
-		 
-		 setLoader(false)
-
+		setLoader(false)
 
 		return answer
 	} catch (err) {

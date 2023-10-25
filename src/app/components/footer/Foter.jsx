@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Footer = () => {
 	return (
-		<div className='py-4 flex justify-between '>
+		<div className='hidden md:flex py-4  justify-between '>
 			<div>©2023 AIntelligence.tech.</div>
 			<div className='flex flex-row space-x-4 '>
 				<a href='https://www.facebook.com/O.Teplyk'>

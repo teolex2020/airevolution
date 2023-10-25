@@ -105,7 +105,7 @@ const Assistant = () => {
 						onClick={() => assist(e)}
 					>
 						<p className='text-2xl py-5 group-hover:underline'>{e.title}</p>
-						<div className='group-hover:shadow1 rounded-md  relative bg-red-500 '>
+						<div className='group-hover:shadow1 rounded-md  relative bg-[#292e35] '>
 							{e.picture ? (
 								<Image
 									src={e.picture}

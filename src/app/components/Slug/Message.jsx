@@ -2,17 +2,20 @@ import React from 'react'
 
 
 
-const Message = ({ role, content, assis, user }) => {
+const Message = ({ role, content, assis}) => {
 	return (
 		<div className='mb-5 '>
-			<div className=''>
+			<div className={``}>
 				{role === 'user' ? (
-					<p className='text-green-600'>{user.email}</p>
+					<p className='text-green-600'>User</p>
 				) : (
 					<p className='text-[#ff9000]'>{assis ? assis : 'Assistant'}</p>
 				)}
 			</div>
-			<div className='bg-[#191a17] rounded-sm p-2 '
+			<div
+				className={`${
+					role === 'user' ? 'bg-[#292e35]' : 'bg-[#5f634c]'
+				} p-3 rounded-md`}
 			>
 				{content}
 			</div>

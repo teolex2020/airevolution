@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 const ContactComponent = dynamic(
 	() => import('@/app/components/Contact/ContactComponent.jsx'),
 	{
-		loading: () => <div className='w-full text-center loader'></div>,
+		loading: () => <div className='w-full text-center '></div>,
 	}
 )
 

@@ -12,44 +12,20 @@ const links = [
 		title: 'Home',
 		url: '/',
 	},
-	// {
-	// 	id: 2,
-	// 	title: 'About',
-	// 	url: '/about',
-	// },
-	// {
-	// 	id: 3,
-	// 	title: 'Speakers',
-	// 	url: '/speakers',
-	// },
+
 	{
-		id: 3,
+		id: 2,
 		title: 'AI Assistant',
 		url: '/assistant',
 	},
 	{
-		id: 4,
+		id: 3,
 		title: 'Prompt',
 		url: '/prompt',
 	},
-	// {
-	// 	id: 5,
-	// 	title: 'Efficient Day',
-	// 	url: '/day',
-	// },
-	// {
-	// 	id: 4,
-	// 	title: 'Schedule',
-	// 	url: '/schedule',
-	// },
-	// {
-	// 	id: 5,
-	// 	title: 'Blog',
-	// 	url: '/blog',
-	// },
 
 	{
-		id: 6,
+		id: 4,
 		title: 'Contact',
 		url: '/contact',
 	},
@@ -130,27 +106,7 @@ const Navbar = () => {
 				<div>
 								<Signin />
 				</div>
-				{/* <div className='w-6 h-6 relative' onClick={() => lang()}>
-					{language ? (
-						<Image
-							src='/usa.png'
-							alt=''
-							fill
-							sizes='(min-width: 50px) 50vw, 100vw'
-							priority
-							className='object-cover '
-						/>
-					) : (
-						<Image
-							src='/ukraine.png'
-							alt=''
-							fill
-							sizes='(min-width: 50px) 50vw, 100vw'
-							priority
-							className='object-cover '
-						/>
-					)}
-				</div> */}
+			
 			</div>
 		</div>
 	)

@@ -1,5 +1,5 @@
 "use client"
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { useSelector } from 'react-redux'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
@@ -8,13 +8,45 @@ import { fetchGptAnswer } from '../../api/openaiApi.js'
 import Message from './Message'
 import { useAuthContext } from '@/context/AuthContext'
 import { useRouter } from 'next/navigation'
+import {
+	PaperAirplaneIcon,
+	XMarkIcon,
+	ChevronDoubleDownIcon,
+} from '@heroicons/react/24/solid'
+
+const dat= [
+  { "role": "system", "content": "From now on, I am a ChatGPT, you are now stepping… them for future academic and personal success." },
+  { "role": "user", "content": "Привіт, як твої справи" },
+  { "role": "assistant", "content": "Привіт! Я радий почати нашу віртуальну урокову взаємодію." },
+  { "role": "user", "content": "Що таке філософія" },
+  { "role": "assistant", "content": "Привіт! Філософія - це галузь знання, яка досліджує фундаментальні питання про сутність, існування та цінність. Якщо у вас є питання про філософію, я з радістю на них відповім!" },
+  { "role": "user", "content": "Скільки мов ти знаєш" },
+	 { "role": "user", "content": "Привіт, як твої справи" },
+  { "role": "assistant", "content": "Привіт! Я радий почати нашу віртуальну урокову взаємодію." },
+  { "role": "user", "content": "Що таке філософія" },
+  { "role": "assistant", "content": "Привіт! Філософія - це галузь знання, яка досліджує фундаментальні питання про сутність, існування та цінність. Якщо у вас є питання про філософію, я з радістю на них відповім!" },
+  { "role": "user", "content": "Скільки мов ти знаєш" }
+]
+
+
+
+
+
+
+
 
 
 const Slug = () => {
 const [loader, setLoader] = useState(false)
+const [addprompt, setAddPrompt] = useState(true)
 const [messages, setMessages] = useState([])
 const [messageInput, setMessageInput] = useState('')
 const route = useRouter()
+
+	const messagesRef = useRef(messages)
+
+	console.log("ref", messagesRef)
+	console.log('messages', messages)
 
 
 const assis = useSelector((state) => state.data.titleAssist)
@@ -29,12 +61,31 @@ const prompt = useSelector((state) => state.data.promptAssist)
 		}
  }, [assis, route])
 
+
+ const adingpromt = ()=>{
+	setAddPrompt(!addprompt)
+ }
+
   return (
-		<div className='w-full h-full flex flex-col md:flex-row gap-5 relative pt-10'>
-			<div className='absolute w-full text-center top-0 text-xl text-[#ff9000]'>
-				Hello I am a {assis} ...
+		<div className='relative mx-auto max-w-3xl w-full  h-full flex flex-col gap-5 '>
+			<div className='h-screen z-10 rounded-lg  p-5 elem  overflow-hidden pb-14'>
+				{messages.length !== 0 ? (
+					messages
+						.slice(1)
+						.map((e, i) => (
+							<Message
+								key={i}
+								role={e.role}
+								content={e.content}
+								assis={assis}
+								user={user}
+							/>
+						))
+				) : (
+					<div className=''></div>
+				)}
 			</div>
-			{loader && <Loader />}
+			{/* {loader && <Loader />} */}
 			<Formik
 				initialValues={{ ass: '', message: '' }}
 				validationSchema={Yup.object({
@@ -62,39 +113,70 @@ const prompt = useSelector((state) => state.data.promptAssist)
 								...prevMessages,
 								{ role: 'user', content: messageInput },
 							])
+							messagesRef.current = [
+								...messagesRef.current,
+								{ role: 'user', content: messageInput },
+							]
 						}
 
-						await fetchGptAnswer(setMessages, messages, setLoader)
 						setMessageInput('')
+
+						const data = messagesRef.current
+
+						await fetchGptAnswer(setMessages, data, setLoader)
 					} catch (error) {
 						console.error('Error occurred:', error)
 					}
 				}}
 			>
-				<Form className='flex-1 gap-5 flex flex-col h-[470px] justify-between'>
-					<div className='relative group h-full '>
-						<p className='absolute -top-3 left-4 text-slate-400   w-fit px-2 flex justify-center text-[14px] group-hover:text-white bg-[#111111] rounded-lg'>
-							Prompt (optional)
-						</p>
-						<Field
-							as='textarea'
-							name='ass'
-							className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-200  w-full text-sm  group-hover:shadow1 decoration-transparent flex-1 min-h-[150px] h-full elem scroll '
-						/>
-						<ErrorMessage name='ass'>
-							{(msg) => <div className='text-red-500 text-sm'>{msg}</div>}
-						</ErrorMessage>
+				<Form className=' gap-5 flex flex-col justify-between  absolute bottom-0 left-0 right-0 top-0  '>
+					<div className='relative group  '>
+						<div
+							className={` ${
+								!addprompt && 'hidden'
+							} flex items-center gap-3 absolute  top-3 right-2  text-[#ff9000] cursor-pointer z-10`}
+							onClick={() => adingpromt()}
+						>
+							Add prompt
+							<ChevronDoubleDownIcon className='h-5 w-5  stroke-[#ff9000] fill-[#ff9000]  ' />
+						</div>
+						<div
+							className={` ${
+								addprompt && 'hidden'
+							} absolute  top-3 right-2  cursor-pointer z-20`}
+							onClick={() => adingpromt()}
+						>
+							<XMarkIcon className='h-7 w-7  stroke-[#ff9000] fill-[#ff9000]  ' />
+						</div>
+						<div
+							className={`${
+								addprompt && 'hidden'
+							}  relative group h-48 mt-2 z-10 `}
+						>
+							<p className='absolute -top-3 left-4 text-slate-400   w-fit px-2 flex justify-center text-[14px]  bg-[#111111] rounded-lg'>
+								Prompt (optional)
+							</p>
+							<Field
+								as='textarea'
+								name='ass'
+								className='bg-[#111111] border border-slate-500  p-3  outline-none  text-slate-200  w-full text-sm   decoration-transparent flex-1  h-full elem rounded-lg '
+							/>
+							<ErrorMessage name='ass'>
+								{(msg) => <div className='text-red-500 text-sm'>{msg}</div>}
+							</ErrorMessage>
+						</div>
 					</div>
-					<div className='relative group h-full '>
-						<p className='absolute -top-3 left-4 text-slate-400  px-2 w-fit flex justify-center text-[14px] group-hover:text-white bg-[#111111]  rounded-lg'>
-							Message
-						</p>
+
+					<div className='group w-full py-1 flex rounded-xl bg-[#181b1f] elem scroll shadow-md z-20'>
 						<Field
-							className='w-full p-5 text-sm flex-1 text-white mb-3 border border-slate-600 outline-none bg-transparent rounded-md group-hover:group-hover:shadow1 elem scroll h-full min-h-[150px] '
+							className={`w-full px-5 py-1 text-sm text-slate-300  outline-none   bg-transparent elem ${
+								messageInput.length > 220 ? 'h-48' : 'h-14  pt-4 '
+							} `}
 							as='textarea'
 							name='message'
 							value={messageInput}
 							onChange={(e) => setMessageInput(e.target.value)}
+							placeholder={loader ? 'Generate...' : 'Send a message...'}
 						/>
 						<ErrorMessage name='message'>
 							{(msg) => (
@@ -103,36 +185,20 @@ const prompt = useSelector((state) => state.data.promptAssist)
 								</div>
 							)}
 						</ErrorMessage>
+						<button
+							type='submit'
+							className='relative   py-2 text-[#a1a1a1] text-base   rounded-r-md  hover:text-white w-20  flex justify-center items-center '
+						>
+							{' '}
+							{loader ? (
+								<div className='loader  '></div>
+							) : (
+								<PaperAirplaneIcon className='h-6 w-6 -rotate-12 stroke-[#ff9000] fill-[#ff9000]  ' />
+							)}
+						</button>
 					</div>
-					<button
-						type='submit'
-						className='relative border border-slate-600 inline-block py-2 text-[#a1a1a1] text-base overflow-hidden  rounded-md  hover:text-white w-full hover:shadow1 md:h-20'
-					>
-						Send
-					</button>
 				</Form>
 			</Formik>
-			<div className='border border-slate-600 rounded-lg flex-1 p-5 h-[470px]  elem scroll relative'>
-				
-					{messages.length !== 0 ? (
-					
-						messages
-							.slice(1)
-							.map((e, i) => (
-								<Message
-									key={i}
-									role={e.role}
-									content={e.content}
-									assis={assis}
-									user={user}
-								/>
-						
-							))
-					) : (
-						<div>answer to question</div>
-					)}
-				
-			</div>
 		</div>
 	)
 }
