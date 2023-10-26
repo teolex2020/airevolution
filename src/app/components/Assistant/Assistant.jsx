@@ -76,6 +76,8 @@ const Assistant = () => {
 	const router = useRouter()
 	const { user } = useAuthContext()
 
+	
+
 	useEffect(() => {
 		if (user === null) {
 			redirect('/login')

@@ -12,6 +12,7 @@
     "@emailjs/browser": "^3.11.0",
     "@heroicons/react": "^2.0.18",
     "@reduxjs/toolkit": "^1.9.7",
+    "ai": "^2.2.18",
     "autoprefixer": "10.4.15",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
