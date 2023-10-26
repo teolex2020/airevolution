@@ -18,7 +18,7 @@ export async function POST(req) {
 
 	// console.log('req', prompt)
 		const prompts = prompt + ' ' + promptMessage
-		console.log('prompt', prompts)
+		
 	// Ask OpenAI for a streaming chat completion given the prompt
 
 	const response = await openai.chat.completions.create({
