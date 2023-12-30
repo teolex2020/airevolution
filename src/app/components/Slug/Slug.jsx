@@ -26,6 +26,8 @@ const Slug = () => {
 		return prompt.find((item) => item.title === title)?.answer
 	}, [title])
 
+	console.log(promptone)
+
 	const {
 		messages,
 		input,
@@ -69,7 +71,7 @@ const Slug = () => {
 				</button>
 			</div>
 			<div className=' h-full w-full px-5 lg:px-10 elem'>
-				<div className='my-6  max-h-[400px] w-full lg:max-h-[650px]  elem overflow-y-scroll '>
+				<div className='my-6   w-full stretch  elem overflow-y-scroll '>
 					{messages.length !== 0 ? (
 						messages.map((e, i) => (
 							<Message key={i} role={e.role} content={e.content} />
@@ -81,8 +83,8 @@ const Slug = () => {
 							</span>
 							<div className=' '>
 								{' '}
-								Привіт, Я Ваш особистий ШІ помічник,
-								 щоб моя відповідь була максимально корисна:
+								Привіт, Я Ваш особистий ШІ помічник, щоб моя відповідь була
+								максимально корисна:
 								<br />
 								{answer?.map((e, i) => (
 									<p key={i}>{e}</p>
