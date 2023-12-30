@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { auth, Providers, ProvidersGit } from '@/firebase/config.js'
+import { auth, Providers, ProvidersGit } from '../../../firebase/config'
 import { signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
