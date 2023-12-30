@@ -4,7 +4,7 @@ import Image from 'next/image'
 const Footer = () => {
 	return (
 		<div className='hidden md:flex py-4  justify-between '>
-			<div>©2023 AIntelligence.tech.</div>
+			<div>©2023 AI.school.</div>
 			<div className='flex flex-row space-x-4 '>
 				<a href='https://www.facebook.com/O.Teplyk'>
 					<div className=' relative w-5 h-5 sm:w-6 sm:h-6'>

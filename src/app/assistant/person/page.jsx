@@ -1,17 +1,15 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-const Prompt = dynamic(
-	() => import('../../app/components/Prompt/Prompt.jsx'),
+const Person = dynamic(
+	() => import('../../components/Person/Person'),
 	{
 		loading: () => <div className='w-full text-center '></div>,
 	}
 )
 
-
-
 const page = () => {
   return (
-    <div><Prompt/></div>
+    <div><Person/></div>
   )
 }
 

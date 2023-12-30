@@ -1,19 +1,24 @@
 'use client'
-
-import { useAuthContext } from '@/context/AuthContext'
+import { Gentium_Book_Plus } from 'next/font/google'
+import { useSelector, useDispatch } from 'react-redux'
 import { useRouter } from 'next/navigation'
 import { getAuth, signOut } from 'firebase/auth'
 
-const Signin = () => {
-	const { user } = useAuthContext()
+const gentium = Gentium_Book_Plus({
+	weight: '400',
+	subsets: ['latin'],
+})
 
+const Signin = () => {
+
+const authuser = useSelector((state) => state.counter.authUser) || ""
 	const router = useRouter()
 
-	const sign = () => {
-		router.push('/login')
-	}
 
 	const singout = () => {
+
+	
+
 		const auth = getAuth()
 		signOut(auth)
 			.then(() => {
@@ -24,26 +29,26 @@ const Signin = () => {
 			})
 	}
 
-	if (user) {
+	if (authuser) {
 		return (
 			<div className=''>
 				<button
 					onClick={() => singout()}
-					className=' bg-green-700 shadow2 px-3 py-1 hover:shadow1 rounded-md cursor-pointer text-center  elem arrownone'
+					className={` border-2 rounded-3xl border-zinc-700/50 px-10 py-2 hover:font-semibold justify-center  flex    duration-300  z-10   items-center gap-5  uppercase  ${gentium.className} text-xl`}
 				>
-					Sign Out
+					Вийти
 				</button>
 			</div>
 		)
 	}
 
 	return (
-		<div className='' >
+		<div className=''>
 			<button
 				onClick={() => sign()}
-				className=' bg-red-700 shadow2 px-3 py-1 hover:shadow1 rounded-md cursor-pointer text-center  elem arrownone'
+				className={`border-2 rounded-3xl border-zinc-700/50 px-10 py-2 hover:font-semibold justify-center flex    duration-300  z-10   items-center gap-5  uppercase  ${gentium.className} text-xl`}
 			>
-				Sign in
+				Увійти
 			</button>
 		</div>
 	)

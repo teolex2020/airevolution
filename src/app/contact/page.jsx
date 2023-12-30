@@ -2,9 +2,13 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 const ContactComponent = dynamic(
-	() => import('@/app/components/Contact/ContactComponent.jsx'),
+	() => import('../../app/components/Contact/ContactComponent.jsx'),
 	{
-		loading: () => <div className='w-full text-center '></div>,
+		loading: () => (
+			<div className='w-screen h-screen flex justify-center items-center'>
+				<div className='loader'></div>
+			</div>
+		),
 	}
 )
 

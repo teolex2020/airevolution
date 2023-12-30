@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import Image from 'next/image'
 
-import contact from '../../../../public/contact1.jpg'
+import contact from '../../../../public/contact.jpg'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -54,11 +54,11 @@ const ContactComponent = () => {
 		}
 	return (
 		<div>
-			<h1 className='text-xl md:text-4xl mb-10 text-center text-white'>
-				Let&apos;s Keep in Touch
+			<h1 className='text-xl md:text-4xl mb-2 lg:mb-10 text-center text-white'>
+				Напишіть нам
 			</h1>
-			<div className='flex items-center gap-10'>
-				<div className='hidden md:flex flex-1 relative w-96 h-[600px]'>
+			<div className='flex flex-col lg:flex-row lg:items-center gap-10'>
+				<div className='flex lg:flex-1 relative w-96 h-72 lg:h-[470px]'>
 					<Image
 						src={contact}
 						alt=''
@@ -74,7 +74,7 @@ const ContactComponent = () => {
 					onSubmit={sendEmail}
 				>
 					<div className='relative group '>
-						<p className='absolute -top-3 left-4 text-slate-400   w-16 flex justify-center text-[14px] group-hover:text-yellow-200/80 bg-[#111111]'>
+						<p className='absolute -top-3 left-4 text-zinc-400   w-16 flex justify-center text-[14px]  bg-[#13181d]'>
 							Name
 						</p>
 						<input
@@ -83,11 +83,11 @@ const ContactComponent = () => {
 							required
 							minLength='3'
 							maxLength='50'
-							className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-[rgb(255,144,0)]/30 decoration-transparent '
+							className='bg-transparent border border-zinc-500 rounded-sm px-3 outline-none  text-zinc-200 h-12 w-full text-sm  group-hover:border-zinc-700  decoration-transparent cursor-pointer'
 						/>
 					</div>
 					<div className='relative group '>
-						<p className='absolute -top-3 left-4 text-slate-400   w-16 flex justify-center text-[14px] group-hover:text-yellow-200/80 bg-[#111111]'>
+						<p className='absolute -top-3 left-4 text-zinc-400   w-16 flex justify-center text-[14px]  bg-[#13181d]'>
 							Email
 						</p>
 						<input
@@ -96,15 +96,15 @@ const ContactComponent = () => {
 							name='email'
 							minLength='3'
 							maxLength='50'
-							className='bg-[#111111] !important border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-[rgb(255,144,0)]/30 decoration-transparent '
+							className='bg-[#13181d] !important border border-zinc-500 rounded-sm px-3 outline-none  text-zinc-200 h-12 w-full text-sm  group-hover:border-zinc-700  decoration-transparent cursor-pointer'
 						/>
 					</div>
 					<div className='relative group '>
-						<p className='absolute -top-3 left-4 text-slate-400  px-2 w-fit flex justify-center text-[14px] group-hover:text-yellow-200/80 bg-[#111111]'>
+						<p className='absolute -top-3 left-4 text-zinc-400  px-2 w-fit flex justify-center text-[14px]  bg-[#13181d]'>
 							Message
 						</p>
 						<textarea
-							className='w-full p-5 text-sm text-white mb-3 border border-slate-600 outline-none bg-transparent rounded-md group-hover:border-[rgb(255,144,0)]/30'
+							className='w-full p-5 text-sm text-white  border border-zinc-600 outline-none bg-transparent rounded-md group-hover:border-zinc-700 cursor-pointer'
 							cols='30'
 							rows='10'
 							name='message'
@@ -116,8 +116,9 @@ const ContactComponent = () => {
 
 					<button
 						type='submit'
-						className='relative bg-[#292929] inline-block py-2 text-[#a1a1a1] text-base overflow-hidden  rounded-md hover:bg-[#181818] hover:text-white'
+						className={`border-2 rounded-xl border-zinc-600 px-10 py-2 flex  hover:bg-blur   uppercase duration-300 z-10 justify-center`}
 					>
+						{' '}
 						Send
 					</button>
 					<ToastContainer />

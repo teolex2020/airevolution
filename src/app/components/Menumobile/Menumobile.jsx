@@ -1,57 +1,57 @@
-"use client"
+'use client'
 
 import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
 import Signin from '../Navbar/Signin'
+import { useSelector, useDispatch } from 'react-redux'
+import { MobileMenus } from '../../../store/features/counterSlice'
+import Logo from '../Logo/Logo'
 
 const links = [
 	{
 		id: 1,
-		title: 'Home',
-		url: '/',
-	},
-
-	{
-		id: 2,
-		title: 'AI Assistant',
+		title: 'інструменти',
 		url: '/assistant',
 	},
 	{
-		id: 3,
-		title: 'Prompt',
-		url: '/prompt',
+		id: 2,
+		title: 'На розвиток',
+		url: '/sponsors',
 	},
+	// {
+	// 	id: 3,
+	// 	title: 'Prompt',
+	// 	url: '/prompt',
+	// },
 
 	{
 		id: 4,
-		title: 'Contact',
+		title: 'Контакти',
 		url: '/contact',
 	},
 ]
 
-const Menumobile = ({ setOpenmenu }) => {
-	const [active, setActive] = useState()
+const Menumobile = () => {
+	const dispatch = useDispatch()
+
+	const mobileMenu = useSelector((state) => state.counter.mobileMenu)
 
 
-	const activeclass = (e) => {
-		setActive(e)
-    setOpenmenu(false)
+
+	const closewindow = () => {
+		dispatch(MobileMenus(mobileMenu))
 	}
-	const activesponsors = () => {
-		setActive(0)
-     setOpenmenu(false)
-	}
-  
-  	const closewindow = () => {
-		
-			setOpenmenu(false)
-		}
-
-	
 
 	return (
-		<div className='fixed bg-[#111111] top-0 bottom-0  right-0 w-72 z-10'>
+		<div
+			className={`fixed bg-[#13181d] top-0 bottom-0 left-0 right-0  z-10 ${
+				mobileMenu
+					? 'transition duration-700 ease-in-out translate-x-[100%] '
+					: 'transition duration-700 ease-in-out translate-x-[0%]'
+			}`}
+		>
+			<div className='absolute left-5'><Logo/></div>
 			<div className='w-full flex justify-end p-5'>
 				<div className='w-8 h-8  ' onClick={() => closewindow()}>
 					<svg
@@ -72,35 +72,25 @@ const Menumobile = ({ setOpenmenu }) => {
 			</div>
 
 			<div className='flex flex-col items-center gap-5 pt-10'>
-				{links.map((link) => (
-					<Link
-						key={link.id}
-						href={link.url}
-						className='flex items-center gap-4'
+				<div className='lg:hidden  flex justify-center'>
+					<ul
+						className={` px-10 py-2 flex flex-col items-center text-center gap-8  uppercase`}
 					>
-						<p
-							className={`${
-								active === link.id && ' text-white '
-							} hover:text-white hover:font-semibold`}
-							onClick={() => activeclass(link.id)}
-						>
-							{link.title}
-						</p>
-					</Link>
-				))}
-				<Link href={`/sponsors`}>
-					{' '}
-					<button
-						className='bg-[rgb(255,144,0)] text-black rounded-md p-1 font-semibold hover:bg-[rgb(252,158,35)] hover:font-bold'
-						onClick={activesponsors}
-					>
-						Sponsors
-					</button>
-				</Link>
-				<div>
-					<Signin />
+						{links.map((item) => (
+							<Link key={item.id} href={item.url}>
+								<li
+									onClick={() => closewindow()}
+									className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center px-10 min-w-[300px]`}
+								>
+									{item.title}
+								</li>
+							</Link>
+						))}
+						<div className='z-10 '>
+							<Signin />
+						</div>
+					</ul>
 				</div>
-		
 			</div>
 		</div>
 	)

@@ -1,112 +1,102 @@
 'use client'
+import { Gentium_Book_Plus } from 'next/font/google'
 import Link from 'next/link'
 import { useState } from 'react'
 import Menumobile from '../Menumobile/Menumobile.jsx'
 import Signin from './Signin.jsx'
+import { usePathname } from 'next/navigation'
+import { useSelector, useDispatch } from 'react-redux'
+import { MobileMenus } from '../../../store/features/counterSlice'
+
+const gentium = Gentium_Book_Plus({
+	weight: '400',
+	subsets: ['latin'],
+})
 
 import Logo from '../Logo/Logo'
 
 const links = [
 	{
 		id: 1,
-		title: 'Home',
-		url: '/',
-	},
-
-	{
-		id: 2,
-		title: 'AI Assistant',
+		title: 'інструменти',
 		url: '/assistant',
 	},
 	{
-		id: 3,
-		title: 'Prompt',
-		url: '/prompt',
+		id: 2,
+		title: 'На розвиток',
+		url: '/sponsors',
 	},
+	// {
+	// 	id: 3,
+	// 	title: 'Prompt',
+	// 	url: '/prompt',
+	// },
 
 	{
 		id: 4,
-		title: 'Contact',
+		title: 'Контакти',
 		url: '/contact',
 	},
 ]
 
-
-
 const Navbar = () => {
+	const dispatch = useDispatch()
 
+	const mobileMenu = useSelector((state) => state.counter.mobileMenu)
 
-	const [active, setActive] = useState()
-	const [openmenu, setOpenmenu] = useState(false)
-
-	const activeclass = (e) => {
-		setActive(e)
-	}
-	const activesponsors = () => {
-		setActive(0)
+	const closewindow = () => {
+		dispatch(MobileMenus(mobileMenu))
 	}
 
-	const openmenumobil = () => {
-		setOpenmenu(true)
-	}
-
-
-
-
+	const pathname = usePathname()
 
 	return (
-		<div className='h-20 flex justify-between items-center my-2 '>
-			{openmenu && <Menumobile setOpenmenu={setOpenmenu}  />}
-			<Link href='/' className='text-bold text-3xl'>
-				<Logo />
-			</Link>
+		<div className='h-16  flex justify-between items-center my-2 '>
+			<Menumobile />
 
-			<div className='w-10 h-10 md:hidden' onClick={() => openmenumobil()}>
-				<svg
-					fill='none'
-					stroke='currentColor'
-					strokeWidth='1.5'
-					viewBox='0 0 24 24'
-					xmlns='http://www.w3.org/2000/svg'
-					aria-hidden='true'
-				>
-					<path
-						strokeLinecap='round'
-						strokeLinejoin='round'
-						d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
-					></path>
-				</svg>
-			</div>
-			<div className='hidden md:flex items-center gap-5'>
-				{links.map((link) => (
-					<Link
-						key={link.id}
-						href={link.url}
-						className='flex items-center gap-4'
-					>
-						<p
-							className={`${
-								active === link.id && ' text-white'
-							} hover:text-white hover:font-semibold`}
-							onClick={() => activeclass(link.id)}
-						>
-							{link.title}
-						</p>
-					</Link>
-				))}
-				<Link href={`/sponsors`}>
-					{' '}
-					<button
-						className='bg-[rgb(255,144,0)] text-black rounded-md p-1 font-semibold hover:bg-[rgb(252,158,35)] hover:font-bold'
-						onClick={activesponsors}
-					>
-						Sponsors
-					</button>
-				</Link>
+			<div className='flex lg:justify-start justify-between items-center space-x-10 w-full '>
 				<div>
-								<Signin />
+					<Link href='/' className='text-bold text-3xl'>
+						<Logo />
+					</Link>
 				</div>
-			
+				<div className='w-10 h-10 md:hidden' onClick={() => closewindow()}>
+					<svg
+						fill='none'
+						stroke='currentColor'
+						strokeWidth='1.5'
+						viewBox='0 0 24 24'
+						xmlns='http://www.w3.org/2000/svg'
+						aria-hidden='true'
+					>
+						<path
+							strokeLinecap='round'
+							strokeLinejoin='round'
+							d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
+						></path>
+					</svg>
+				</div>
+				<div className='hidden border-2 rounded-3xl border-zinc-700/50 px-5  text-center py-2 lg:flex'>
+					<ul className={`flex gap-5   ${gentium.className} uppercase`}>
+						{links.map((item) => (
+							<Link key={item.id} href={item.url}>
+								<li
+									className={`${
+										pathname.includes(item.url)
+											? 'underline underline-offset-[14px]'
+											: ''
+									} cursor-pointer w-40 text-center  duration-300 hover:underline underline-offset-[14px] text-xl`}
+								>
+									{item.title}
+								</li>
+							</Link>
+						))}
+					</ul>
+				</div>
+			</div>
+
+			<div className='hidden lg:block'>
+				<Signin />
 			</div>
 		</div>
 	)

@@ -1,123 +1,177 @@
 'use client'
-import React, { useState, useEffect} from 'react'
+import { useRef, useEffect, useState, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import Message from './Message'
-import { useAuthContext } from '@/context/AuthContext'
 import { useRouter } from 'next/navigation'
 import {
 	PaperAirplaneIcon,
-	XMarkIcon,
-	ChevronDoubleDownIcon,
+	ArrowPathIcon,
+	StopCircleIcon,
 } from '@heroicons/react/24/solid'
 import { useChat } from 'ai/react'
 
+import { Bot, ArrowLeft } from 'lucide-react'
+import GrowingTextArea from './Textarea'
+import { prompt } from '../Assistant/assiastant'
+
 const Slug = () => {
+	const title = useSelector((state) => state.counter.promptstudy)
+	const router = useRouter()
 
-	const assis = useSelector((state) => state.data.titleAssist)
-	const prompt = useSelector((state) => state.data.promptAssist)
-const [promptMessage, setPromptMessage] = useState('')
-	const [addprompt, setAddPrompt] = useState(true)
-	const { messages, input, handleInputChange, handleSubmit, isLoading, error } =
-		useChat({ body: { prompt, promptMessage } })
-	const route = useRouter()
+	const promptone = useMemo(() => {
+		return prompt.find((item) => item.title === title)?.select
+	}, [title])
 
+	const answer = useMemo(() => {
+		return prompt.find((item) => item.title === title)?.answer
+	}, [title])
 
+	const {
+		messages,
+		input,
+		handleInputChange,
+		handleSubmit,
+		isLoading,
+		error,
+		reload,
+		stop,
+	} = useChat({ body: { promptone } })
 
-	
+	const [selectedFile, setSelectedFile] = useState()
 
-	const { user } = useAuthContext()
+	const messagesEndRef = useRef(null)
+	const fileInputRef = useRef(null)
 
 	useEffect(() => {
-		if (!assis) {
-			route.push('/assistant')
-		}
-	}, [assis, route])
+		messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+	}, [messages])
 
-	const adingpromt = () => {
-		setAddPrompt(!addprompt)
+	const handleFileChange = (e) => {
+		// @ts-ignore
+		console.log('File selected:', e.target.files[0])
+		// @ts-ignore
+		setSelectedFile(e.target.files[0])
+	}
+
+	const handleFileChangeClick = () => {
+		// @ts-ignore
+		fileInputRef.current.click()
 	}
 
 	return (
-		<div className='relative mx-auto max-w-3xl w-full  h-full flex flex-col gap-5 '>
-			<div className='h-screen z-10 rounded-lg  p-5 elem  overflow-hidden pb-14'>
-				{messages.length !== 0 ? (
-					messages.map((e, i) => (
-						<Message
-							key={i}
-							role={e.role}
-							content={e.content}
-							assis={assis}
-							user={user}
-						/>
-					))
-				) : (
-					<div></div>
-				)}
-				<div className='w-full h-full flex justify-center items-center'>
-					{error}
+		<div
+			className={` mx-auto  w-full max-w-4xl h-full  flex flex-col items-center justify-between gap-5 overflow-auto  relative elem `}
+		>
+			<div className='w-full  pt-5 flex justify-end'>
+				<button className='flex ' onClick={() => router.back()}>
+					<ArrowLeft />
+					Назад
+				</button>
+			</div>
+			<div className=' h-full w-full px-5 lg:px-10 elem'>
+				<div className='my-6  max-h-[400px] w-full lg:max-h-[650px]  elem overflow-y-scroll '>
+					{messages.length !== 0 ? (
+						messages.map((e, i) => (
+							<Message key={i} role={e.role} content={e.content} />
+						))
+					) : (
+						<div className='w-full gap-5  flex flex-col items-center justify-center '>
+							<span>
+								<Bot width={60} height={60} color='white' />
+							</span>
+							<div className=' '>
+								{' '}
+								Привіт, Я Ваш особистий ШІ помічник,
+								 щоб моя відповідь була максимально корисна:
+								<br />
+								{answer?.map((e, i) => (
+									<p key={i}>{e}</p>
+								))}
+							</div>
+						</div>
+					)}
+
+					<div ref={messagesEndRef} />
+					<div className='w-full h-full flex justify-center items-center text-red-500 '>
+						{error?.message}
+					</div>
 				</div>
 			</div>
 
-			<form onSubmit={handleSubmit}>
-				<div className=' gap-5 flex flex-col justify-between  absolute bottom-0 left-0 right-0 top-0  '>
-					<div className='relative group  '>
+			<div className='flex w-full  '>
+				<form onSubmit={handleSubmit} className={`w-full p-5 `}>
+					<div className='flex w-full justify-end gap-5 px-5 py-2'>
 						<div
-							className={` ${
-								!addprompt && 'hidden'
-							} flex items-center gap-3 absolute  top-3 right-2  text-[#ff9000] cursor-pointer z-10`}
-							onClick={() => adingpromt()}
+							className=' flex justify-end  cursor-pointer'
+							onClick={() => stop()}
 						>
-							Add prompt
-							<ChevronDoubleDownIcon className='h-5 w-5  stroke-[#ff9000] fill-[#ff9000]  ' />
+							<StopCircleIcon className='h-6 w-6 stroke-slate-100 fill-slate-100 stroke-[1px] ' />
 						</div>
 						<div
-							className={` ${
-								addprompt && 'hidden'
-							} absolute  top-3 right-2  cursor-pointer z-20`}
-							onClick={() => adingpromt()}
+							className=' flex justify-end  cursor-pointer'
+							onClick={() => reload()}
 						>
-							<XMarkIcon className='h-7 w-7  stroke-[#ff9000] fill-[#ff9000]  ' />
-						</div>
-						<div
-							className={`${
-								addprompt && 'hidden'
-							}  relative group h-48 mt-2 z-10 `}
-						>
-							<p className='absolute -top-3 left-4 text-slate-400   w-fit px-2 flex justify-center text-[14px]  bg-[#111111] rounded-lg'>
-								Prompt (optional)
-							</p>
-							<textarea
-								value={promptMessage}
-								onChange={(e) => setPromptMessage(e.target.value)}
-								className='bg-[#111111] border border-slate-500  p-3  outline-none  text-slate-200  w-full text-sm   decoration-transparent   h-full elem rounded-lg '
-							/>
+							<ArrowPathIcon className='h-6 w-6 stroke-slate-100 fill-none stroke-[1px] ' />
 						</div>
 					</div>
+					<div className='group w-full py-1  flex items-center  bg-white  shadow-md z-20 elem rounded-2xl    '>
+						{/* <div className='px-3'>
+							<div className='flex'>
+								<div
+									onClick={handleFileChangeClick}
+									className='btn relative p-0 text-black dark:text-white'
+									aria-label='Attach files'
+								>
+									<div className='flex w-full gap-2 items-center justify-center'>
+										<svg
+											width='24'
+											height='24'
+											viewBox='0 0 24 24'
+											fill='none'
+											xmlns='http://www.w3.org/2000/svg'
+										>
+											<path
+												fillRule='evenodd'
+												clipRule='evenodd'
+												d='M9 7C9 4.23858 11.2386 2 14 2C16.7614 2 19 4.23858 19 7V15C19 18.866 15.866 22 12 22C8.13401 22 5 18.866 5 15V9C5 8.44772 5.44772 8 6 8C6.55228 8 7 8.44772 7 9V15C7 17.7614 9.23858 20 12 20C14.7614 20 17 17.7614 17 15V7C17 5.34315 15.6569 4 14 4C12.3431 4 11 5.34315 11 7V15C11 15.5523 11.4477 16 12 16C12.5523 16 13 15.5523 13 15V9C13 8.44772 13.4477 8 14 8C14.5523 8 15 8.44772 15 9V15C15 16.6569 13.6569 18 12 18C10.3431 18 9 16.6569 9 15V7Z'
+												fill='currentColor'
+											></path>
+										</svg>
+									</div>
+								</div>
+							
+								<input
+									ref={fileInputRef}
+									id='fileInput'
+									name='fileInputa'
+									multiple={true}
+									onChange={handleFileChange}
+									type='file'
+									tabIndex={-1}
+									className='hidden'
+								/>
+							</div>
+						</div> */}
 
-					<div className='group w-full py-1 flex items-center rounded-3xl bg-[#181b1f] elem scroll shadow-md z-20'>
-						<textarea
-							className={`w-full px-5  py-1 text-sm text-slate-300  outline-none   bg-transparent elem  ${
-								input.length > 220 ? 'h-48' : 'h-14  pt-4 '
-							} `}
-							value={input}
+						<GrowingTextArea
 							onChange={handleInputChange}
-							placeholder={isLoading ? 'Generate...' : 'Send a message...'}
+							value={input}
+							className=' w-full  max-w-3xl
+							 text-black bottom-0  rounded-lg  p-2 border-none outline-none px-5  max-h-[200px]'
 						/>
 
 						<button
+							disabled={isLoading}
 							type='submit'
-							className='relative   py-2 text-[#a1a1a1] text-base   rounded-r-md  hover:text-white w-20  flex justify-center items-center '
+							className=' right-0 bottom-6 py-2 text-[#a1a1a1] text-base   rounded-r-md  hover:text-white w-20  flex justify-center items-center absolute '
 						>
-							{' '}
-							{isLoading ? (
-								<div className='loader  '></div>
-							) : (
-								<PaperAirplaneIcon className='h-6 w-6 -rotate-12 stroke-[#ff9000] fill-[#ff9000]  ' />
-							)}
+							<div className=''>
+								<PaperAirplaneIcon className='h-6 w-6 -rotate-12 stroke-[#12181c] fill-[#12181c]  ' />
+							</div>
 						</button>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
 	)
 }
