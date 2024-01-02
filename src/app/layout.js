@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
 						priority={true}
 						className='object-cover opacity-[0.8%] fixed left-0 right-0'
 					/>
-					<div className='h-full mx-auto flex flex-col justify-between   '>
+					<div className='h-full mx-auto flex flex-col sm:justify-between   '>
 						<Providers>
 							<Navbar />
 							<div className='px-[3%] container mx-auto flex flex-col '>
