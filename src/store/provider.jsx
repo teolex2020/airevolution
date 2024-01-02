@@ -6,11 +6,12 @@ import { getAuth } from 'firebase/auth'
 import firebase_app from '../firebase/config'
 import { useDispatch } from 'react-redux'
 import { Authuser, Loading, Id } from './features/counterSlice'
+import { useRouter } from 'next/navigation'
 
 export const MyComponent = () => {
 	const dispatch = useDispatch()
 	const auth = getAuth(firebase_app)
-
+const router = useRouter()
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
 			if (user) {
@@ -21,12 +22,13 @@ export const MyComponent = () => {
 
 				// Диспатч Redux Action тут
 			} else {
+			
 				console.log('User is not logged in')
 			}
 		})
 
 		return () => unsubscribe()
-	}, [auth, dispatch])
+	}, [auth, dispatch, router])
 }
 
 export async function Providers({ children = {} }) {

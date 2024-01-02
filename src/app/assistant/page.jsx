@@ -5,7 +5,7 @@ const Assistant = dynamic(
 	() => import('../../app/components/Assistant/Assistant'),
 	{
 		loading: () => (
-			<div className='w-screen h-screen flex justify-center items-center'>
+			<div className='grid place-items-center'>
 				<div className='loader'></div>
 			</div>
 		),

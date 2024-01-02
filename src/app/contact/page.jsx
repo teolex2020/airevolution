@@ -5,7 +5,7 @@ const ContactComponent = dynamic(
 	() => import('../../app/components/Contact/ContactComponent.jsx'),
 	{
 		loading: () => (
-			<div className='w-screen h-screen flex justify-center items-center'>
+			<div className='grid place-items-center'>
 				<div className='loader'></div>
 			</div>
 		),

@@ -54,7 +54,7 @@ dispatch(PromptStudy(e.minipromt))
 				{links.map((e) => (
 					<div
 						key={e.id}
-						className='text-center w-80 h-[400px] cursor-pointer hover:text-white hover:shadow2 flex flex-col items-center border-2 rounded-3xl border-zinc-700/50  '
+						className='text-center w-80 h-[400px] cursor-pointer hover:text-white hover:shadow2 flex flex-col items-center border-4 rounded-3xl border-zinc-700/50 z-10 bg-blur '
 						onClick={() => assist(e)}
 					>
 						<p className='text-2xl py-5 '>{e.title}</p>

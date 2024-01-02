@@ -2,7 +2,7 @@ import React from 'react'
 
 const page = () => {
 	return (
-		<div className=' flex justify-center items-center container mx-auto flex-col text-center gap-10 mt-24 md:mt-0'>
+		<div className=' flex justify-center items-center container mx-auto flex-col text-center gap-10 lg:mt-24 md:mt-0'>
 			<h2 className='text-3xl text-[#ffc439] font-semibold'>
 				Ваша допомога має значення
 			</h2>
@@ -29,22 +29,21 @@ const page = () => {
 					method='post'
 					target='_top'
 				>
-					<input type='hidden' name='hosted_button_id' value='G58E7A6NSFEX8' />
+					<input type='hidden' name='hosted_button_id' value='R83KKFQXRGVPC' />
 					<input
 						type='image'
-						src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif'
+						src='https://pics.paypal.com/00/s/MTZmN2FhZjctZGNlMC00MzIxLWJjMWQtODI2MGNiMmQ5ZTgx/file.PNG'
 						border='0'
 						name='submit'
 						title='PayPal - The safer, easier way to pay online!'
 						alt='Donate with PayPal button'
-						className='w-32'
 					/>
 					<img
 						alt=''
 						border='0'
-						src='https://www.paypal.com/en_US/i/scr/pixel.gif'
-						width='2'
-						height='2'
+						src='https://www.paypal.com/en_UA/i/scr/pixel.gif'
+						width='1'
+						height='1'
 					/>
 				</form>
 			</div>
@@ -52,12 +51,9 @@ const page = () => {
 				<a href='https://www.aintelligence.tech/en'>
 					{' '}
 					<p className=''>
-						
 						<span className='text-blue-500'>www.aintelligence.tech</span>
 					</p>
 				</a>
-
-				
 			</div>
 		</div>
 	)

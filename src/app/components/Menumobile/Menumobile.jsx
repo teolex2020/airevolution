@@ -7,6 +7,7 @@ import Signin from '../Navbar/Signin'
 import { useSelector, useDispatch } from 'react-redux'
 import { MobileMenus } from '../../../store/features/counterSlice'
 import Logo from '../Logo/Logo'
+import Image from 'next/image'
 
 const links = [
 	{
@@ -15,15 +16,15 @@ const links = [
 		url: '/assistant',
 	},
 	{
+		id: 3,
+		title: 'Про себе',
+		url: '/about',
+	},
+	{
 		id: 2,
 		title: 'На розвиток',
 		url: '/sponsors',
 	},
-	// {
-	// 	id: 3,
-	// 	title: 'Prompt',
-	// 	url: '/prompt',
-	// },
 
 	{
 		id: 4,
@@ -31,6 +32,7 @@ const links = [
 		url: '/contact',
 	},
 ]
+
 
 const Menumobile = () => {
 	const dispatch = useDispatch()
@@ -45,13 +47,23 @@ const Menumobile = () => {
 
 	return (
 		<div
-			className={`fixed bg-[#13181d] top-0 bottom-0 left-0 right-0  z-10 ${
+			className={`fixed bg-[#13181d] top-0 bottom-0 left-0 right-0  z-50 ${
 				mobileMenu
 					? 'transition duration-700 ease-in-out translate-x-[100%] '
 					: 'transition duration-700 ease-in-out translate-x-[0%]'
 			}`}
 		>
-			<div className='absolute left-5'><Logo/></div>
+			<div className='absolute left-5'>
+				{' '}
+				<Image
+					src='/log.png'
+					width={60}
+					height={30}
+					alt='logo'
+					priority
+					sizes='(min-width: 500px) 50vw, 100vw'
+				/>
+			</div>
 			<div className='w-full flex justify-end p-5'>
 				<div className='w-8 h-8  ' onClick={() => closewindow()}>
 					<svg

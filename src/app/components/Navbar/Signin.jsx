@@ -10,19 +10,15 @@ const gentium = Gentium_Book_Plus({
 })
 
 const Signin = () => {
-
-const authuser = useSelector((state) => state.counter.authUser) || ""
+	const dispatch = useDispatch()
 	const router = useRouter()
-
+	const authuser = useSelector((state) => state.counter.authUser) || ''
 
 	const singout = () => {
-
-	
-
 		const auth = getAuth()
 		signOut(auth)
 			.then(() => {
-				// Sign-out successful.
+				router.push('/login')
 			})
 			.catch((error) => {
 				// An error happened.
@@ -45,7 +41,7 @@ const authuser = useSelector((state) => state.counter.authUser) || ""
 	return (
 		<div className=''>
 			<button
-				onClick={() => sign()}
+				onClick={() => router.push('/login')}
 				className={`border-2 rounded-3xl border-zinc-700/50 px-10 py-2 hover:font-semibold justify-center flex    duration-300  z-10   items-center gap-5  uppercase  ${gentium.className} text-xl`}
 			>
 				Увійти

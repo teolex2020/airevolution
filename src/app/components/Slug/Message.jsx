@@ -1,10 +1,10 @@
 import React from 'react'
-import Markdown from 'react-markdown'
+import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus as dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { Bot, User } from 'lucide-react'
-
+import remarkMath from 'remark-math'
 
 const Message = ({ role, content, assis}) => {
 	return (
@@ -16,13 +16,9 @@ const Message = ({ role, content, assis}) => {
 					<Bot width={30} height={40} color='green' />
 				)}
 			</div>
-			<div
-				className={`${
-					role === 'user' ? ' ' : ''
-				} p-3 rounded-md`}
-			>
-				<Markdown
-					remarkPlugins={[remarkGfm]}
+			<div className={`${role === 'user' ? ' ' : ''} p-3 rounded-md`}>
+				<ReactMarkdown
+					remarkPlugins={[remarkGfm, remarkMath]}
 					components={{
 						code({ inline, className, children, ...props }) {
 							const match = /language-(\w+)/.exec(className || 'language-js')
@@ -46,7 +42,7 @@ const Message = ({ role, content, assis}) => {
 					}}
 				>
 					{content}
-				</Markdown>
+				</ReactMarkdown>
 			</div>
 		</div>
 	)

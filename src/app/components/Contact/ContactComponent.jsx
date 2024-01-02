@@ -55,7 +55,7 @@ const ContactComponent = () => {
 	return (
 		<div>
 			<h1 className='text-xl md:text-4xl mb-2 lg:mb-10 text-center text-white'>
-				Напишіть нам
+				Напишіть мені
 			</h1>
 			<div className='flex flex-col lg:flex-row lg:items-center gap-10'>
 				<div className='flex lg:flex-1 relative w-96 h-72 lg:h-[470px]'>

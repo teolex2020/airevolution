@@ -9,6 +9,7 @@ import {
 	StopCircleIcon,
 } from '@heroicons/react/24/solid'
 import { useChat } from 'ai/react'
+import withAuth from "../../../helper/withAuth"
 
 import { Bot, ArrowLeft } from 'lucide-react'
 import GrowingTextArea from './Textarea'
@@ -26,7 +27,7 @@ const Slug = () => {
 		return prompt.find((item) => item.title === title)?.answer
 	}, [title])
 
-	console.log(promptone)
+
 
 	const {
 		messages,
@@ -178,4 +179,4 @@ const Slug = () => {
 	)
 }
 
-export default Slug
+export default withAuth(Slug)
