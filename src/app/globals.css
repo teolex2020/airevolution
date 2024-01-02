@@ -155,3 +155,9 @@ select::-ms-expand {
     display: none !important;
   }
 }
+
+@layer utilities {
+.main-content{
+height: calc(100vh - 136px);
+}
+}

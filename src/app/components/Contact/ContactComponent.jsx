@@ -58,7 +58,7 @@ const ContactComponent = () => {
 				Напишіть мені
 			</h1>
 			<div className='flex flex-col lg:flex-row lg:items-center gap-10'>
-				<div className='flex lg:flex-1 relative w-96 h-72 lg:h-[470px]'>
+				<div className='flex  lg:flex-1 relative  h-72 lg:h-[470px]'>
 					<Image
 						src={contact}
 						alt=''

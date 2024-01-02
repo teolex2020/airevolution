@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
 		<html>
 			<body className={inter.className}>
 				<div
-					className='     '
+					className='  elem   '
 					style={{
 						// use relative position for the parent div
 						position: 'relative',
@@ -43,8 +43,8 @@ export default function RootLayout({ children }) {
 					<div className='h-full mx-auto flex flex-col justify-between   '>
 						<Providers>
 							<Navbar />
-							<div className='px-[3%] container mx-auto flex flex-col'>
-								{' '}
+							<div className='px-[3%] container mx-auto flex flex-col '>
+							
 								{children}
 							</div>
 

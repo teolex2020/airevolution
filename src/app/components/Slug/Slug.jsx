@@ -63,7 +63,7 @@ const Slug = () => {
 
 	return (
 		<div
-			className={` mx-auto  w-full max-w-4xl h-full  flex flex-col items-center justify-between gap-5 overflow-auto  relative elem `}
+			className={` mx-auto flex-1 w-full max-w-4xl h-full  flex flex-col items-center justify-between gap-5 overflow-auto  relative elem main-content`}
 		>
 			<div className='w-full  pt-5 flex justify-end'>
 				<button className='flex ' onClick={() => router.back()}>
