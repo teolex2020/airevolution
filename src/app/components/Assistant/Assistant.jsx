@@ -4,20 +4,23 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 import { PromptStudy } from '../../../store/features/counterSlice.js'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import {
+	EffectCoverflow,
+	Pagination,
 	Navigation,
 	Scrollbar,
 	A11y,
-	EffectCoverflow,
-	Autoplay,
+	Keyboard,
 } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
-
 import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/scrollbar'
 import 'swiper/css/effect-coverflow'
 
+import 'swiper/css/scrollbar'
+import 'swiper/css/a11y'
+import 'swiper/css/keyboard'
+import 'swiper/css/navigation'
+import { ChevronLeftCircle , ChevronRightCircle    } from 'lucide-react'
 const links = [
 	{
 		id: 1,
@@ -61,53 +64,51 @@ const Assistant = () => {
 	const dispatch = useDispatch()
 	const router = useRouter()
 
-
 	const assist = (e) => {
-dispatch(PromptStudy(e.minipromt))
+		dispatch(PromptStudy(e.minipromt))
 		router.push(`/assistant/${e.link}`)
 	}
 
 	return (
-		<div className='flex mt-5  w-full flex-col lg:items-center  '>
+		<div className='flex mt-5  w-full flex-col lg:items-center h-full '>
 			<div className=' lg:text-3xl text-2xl font-semibold text-center pb-14 z-10'>
 				Оберіть інструмент, що найкраще підходить Вам.{' '}
 			</div>
-			<div className='ml-6  w-screen'>
+			<div className=' ml-3 w-screen flex mx-auto container relative'>
 				<Swiper
-				
-      modules={[Navigation, Scrollbar, A11y, EffectCoverflow, Autoplay]}
-      spaceBetween={-800}
-      slidesPerView={3}
-      // navigation
-      loop
-      simulateTouch
-      centeredSlides
-      // onSwiper={(swiper) => console.log(swiper)}
-      // onSlideChange={centeredSlide() => console.log('slide change')}
-      autoplay={{ delay: 4000, disableOnInteraction: false }}
-      effect="coverflow"
-      coverflowEffect={{
-        rotate: 0,
-        stretch: 0,
-        depth: 50,
-        modifier: 1,
-        slideShadows: false,
-      }}
-      breakpoints={{
-        600: {
-          spaceBetween: -100,
-          slidesPerView: 3,
-        },
-        400: {
-          spaceBetween: -100,
-          slidesPerView: 2,
-        },
-        200: {
-          spaceBetween: -100,
-          slidesPerView: 1,
-        },
-      }}
-					className=' sm:w-[40%]   flex justify-center items-center flex-col md:flex-row  '
+					effect={'coverflow'}
+					grabCursor={true}
+					centeredSlides={true}
+					slidesPerView={3}
+					allowTouchMove={true}
+					loop
+					keyboard={true}
+					breakpoints={{
+						300: {
+							slidesPerView: 1,
+						},
+
+						640: {
+							slidesPerView: 3, // 3 слайда для великих пристроїв
+						},
+					}}
+					navigation={{ nextEl: '.arrow-left', prevEl: '.arrow-right' }}
+					coverflowEffect={{
+						rotate: 30,
+						stretch: 0,
+						depth: 100,
+						modifier: 1,
+						slideShadows: true,
+					}}
+					modules={[
+						Scrollbar,
+						A11y,
+						EffectCoverflow,
+						Pagination,
+						Navigation,
+						Keyboard,
+					]}
+					className=' sm:w-[1000px]  flex justify-center items-center flex-col md:flex-row  arrow-lef'
 				>
 					{links.map((e) => (
 						<SwiperSlide key={e.id}>
@@ -142,6 +143,15 @@ dispatch(PromptStudy(e.minipromt))
 						</SwiperSlide>
 					))}
 				</Swiper>
+			</div>
+			<div className='z-10 flex gap-20 sm:py-5 justify-center'>
+				{' '}
+				<button className='arrow-left z-10   '>
+					<ChevronLeftCircle className='w-10 h-10 lg:w-10 lg:h-10 text-zinc-600' />
+				</button>
+				<button className='arrow-right z-10 '>
+					<ChevronRightCircle className='w-10 h-10 lg:w-10 lg:h-10 text-zinc-600' />
+				</button>
 			</div>
 		</div>
 	)

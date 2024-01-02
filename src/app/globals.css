@@ -161,3 +161,9 @@ select::-ms-expand {
 height: calc(100vh - 136px);
 }
 }
+
+@layer utilities {
+.arrow-left {
+  left: 0;
+	
+}}
