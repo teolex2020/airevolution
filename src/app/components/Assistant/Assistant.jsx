@@ -74,7 +74,7 @@ const Assistant = () => {
 			<div className=' lg:text-3xl text-2xl font-semibold text-center pb-14 z-10'>
 				Оберіть інструмент, що найкраще підходить Вам.{' '}
 			</div>
-			<div className=' ml-3 w-screen flex mx-auto container relative'>
+			<div className=' justify-center  flex mx-auto container relative '>
 				<Swiper
 					effect={'coverflow'}
 					grabCursor={true}
@@ -108,10 +108,11 @@ const Assistant = () => {
 						Navigation,
 						Keyboard,
 					]}
-					className=' sm:w-[1000px]  flex justify-center items-center flex-col md:flex-row  arrow-lef'
+					className='sm:w-[1000px]   md:flex-row  arrow-lef w-[320px]'
+					// style={{ width: '320px' }}
 				>
 					{links.map((e) => (
-						<SwiperSlide key={e.id}>
+						<SwiperSlide key={e.id} className='flex justify-center '>
 							<div
 								className='text-center w-80 h-[400] cursor-pointer hover:text-white hover:shadow2 flex flex-col items-center border-4 rounded-3xl border-zinc-700/50 z-10 bg-blur '
 								onClick={() => assist(e)}
