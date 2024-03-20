@@ -6,13 +6,8 @@ import { Providers } from '../store/provider.jsx'
 import Image from 'next/image'
 import clsx from 'clsx'
 
-
 export async function generateMetadata() {
 	return {
-		icons: {
-			icon: '/favicon-32x32.png',
-		},
-
 		title: {
 			default: 'AI consulting services',
 		},
@@ -20,7 +15,6 @@ export async function generateMetadata() {
 }
 
 const inter = Inter({ subsets: ['latin'] })
-
 
 export default function RootLayout({ children }) {
 	return (
