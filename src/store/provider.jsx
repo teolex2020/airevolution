@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation'
 import { PersistGate } from 'redux-persist/integration/react'
 import Menumobile from '../app/components/Menumobile/Menumobile'
 import Popup from '../app/components/Navbar/Popup'
-// import CursorGlow from '../app/components/CursorGlow/CursorGlow'
+import CursorGlow from '../app/components/CursorGlow/CursorGlow'
 
 export const MyComponent = () => {
 	const dispatch = useDispatch()
@@ -39,7 +39,7 @@ export async function Providers({ children = {} }) {
 	return (
 		<Provider store={store}>
 			<PersistGate loading={null} persistor={persistor}>
-				{/* <CursorGlow /> */}
+				<CursorGlow />
 				<Popup />
 				< Menumobile/>
 				<MyComponent />
