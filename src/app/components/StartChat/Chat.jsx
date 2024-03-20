@@ -2,7 +2,7 @@
 import { useRef, useEffect, useState } from 'react'
 import Message from './Message'
 import { Gentium_Book_Plus } from 'next/font/google'
-import { SendHorizontal } from 'lucide-react'
+import { SendHorizontal, Bot } from 'lucide-react'
 import GrowingTextArea from './Textarea'
 import Image from 'next/image'
 import {  experimental_useAssistant as useAssistant } from 'ai/react'
@@ -95,6 +95,11 @@ const Chat = () => {
 									>
 										Empower Your Business with AI-driven Automation
 									</h1>
+									<Bot
+										size={44}
+										
+										className=''
+									/>
 
 									<div className=' text-justify  lg:text-[19px] lg:px-8 py-5 max-w-2xl'>
 										<motion.div
@@ -115,7 +120,7 @@ const Chat = () => {
 					)}
 					{status === 'in_progress' && (
 						<div className='w-full h-full flex justify-center items-center  '>
-							Loading ....
+							Processing ....
 						</div>
 					)}
 
@@ -132,13 +137,13 @@ const Chat = () => {
 							onChange={handleInputChange}
 							value={input}
 							className=' w-full  max-w-3xl
-							 text-black bottom-0  rounded-sm  p-2 border-none outline-none px-5  max-h-[200px] '
+							 text-black bottom-0  rounded-sm  p-2 border-none outline-none px-3   max-h-[200px] '
 						/>
 
 						<button
 							disabled={status !== 'awaiting_message'}
 							type='submit'
-							className=' right-0  text-[#a1a1a1] text-base   rounded-r-md   w-20  flex justify-center items-center absolute hover:scale-110 duration-300 group'
+							className=' right-0  text-[#a1a1a1] text-base   rounded-r-md   w-10  flex justify-center items-center absolute hover:scale-110 duration-300 group'
 							title='Send message'
 						>
 							<div className=''>
