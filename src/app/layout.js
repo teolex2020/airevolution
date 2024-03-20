@@ -11,6 +11,9 @@ export async function generateMetadata() {
 		title: {
 			default: 'AI consulting services',
 		},
+		openGraph: {
+			images: '/aboutme.webp',
+		},
 	}
 }
 

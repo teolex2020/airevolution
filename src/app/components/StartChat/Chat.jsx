@@ -37,7 +37,7 @@ const Chat = () => {
 
 
 		const fullText = `Hello. I am here to help you unlock the potential of artificial intelligence (AI) and integrate it into various aspects of your business. My goal is to provide you with expert support and advice on how to implement AI in operations, supply chain, customer service, finance, healthcare, and more.
-		I look forward to hearing from you.`
+		I look forward to your questions.`
 
 	const variants = {
 		hidden: {
@@ -48,8 +48,8 @@ const Chat = () => {
 			opacity: 1,
 			x: 0,
 			transition: {
-				duration: 0.7,
-				staggerChildren: 0.1,
+				duration: 0.4,
+				staggerChildren: 0.05,
 			},
 		},
 	}
