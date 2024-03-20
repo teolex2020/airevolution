@@ -1,0 +1,12 @@
+.cursor-glow {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background-color: rgb(70,159,194); /* Синій колір для прикладу */
+  pointer-events: none; /* Щоб елемент не впливав на інші елементи при наведенні */
+  box-shadow: 0 0 95px 35px rgb(70,159,194); /* Ефект світіння */
+  transform: translate(-50%, -50%); /* Центрування хмаринки відносно курсору */
+  z-index: 1000; 
+/* Щоб хмаринка була над іншими елементами */
+}

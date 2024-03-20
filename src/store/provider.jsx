@@ -1,12 +1,16 @@
 'use client'
 import { useEffect } from 'react'
-import { store } from './store'
+import { store, persistor } from './store'
 import { Provider } from 'react-redux'
 import { getAuth } from 'firebase/auth'
 import firebase_app from '../firebase/config'
 import { useDispatch } from 'react-redux'
 import { Authuser, Loading, Id } from './features/counterSlice'
 import { useRouter } from 'next/navigation'
+import { PersistGate } from 'redux-persist/integration/react'
+import Menumobile from '../app/components/Menumobile/Menumobile'
+import Popup from '../app/components/Navbar/Popup'
+import CursorGlow from '../app/components/CursorGlow/CursorGlow'
 
 export const MyComponent = () => {
 	const dispatch = useDispatch()
@@ -34,8 +38,13 @@ const router = useRouter()
 export async function Providers({ children = {} }) {
 	return (
 		<Provider store={store}>
-			<MyComponent />
-			{children}
+			<PersistGate loading={null} persistor={persistor}>
+				<CursorGlow />
+				<Popup />
+				< Menumobile/>
+				<MyComponent />
+				{children}
+			</PersistGate>
 		</Provider>
 	)
 }

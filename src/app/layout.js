@@ -2,10 +2,9 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from './components/footer/Foter.jsx'
 import Navbar from './components/Navbar/Navbar.jsx'
-import Image from 'next/image'
 import { Providers } from '../store/provider.jsx'
-const inter = Inter({ subsets: ['latin'] })
-
+import Image from 'next/image'
+import clsx from 'clsx'
 
 
 export async function generateMetadata() {
@@ -15,42 +14,33 @@ export async function generateMetadata() {
 		},
 
 		title: {
-			default: 'AI School',
+			default: 'AI consulting services',
 		},
 	}
 }
 
+const inter = Inter({ subsets: ['latin'] })
+
+
 export default function RootLayout({ children }) {
 	return (
 		<html>
-			<body className={inter.className}>
-				<div
-					className='  elem   '
-					style={{
-						// use relative position for the parent div
-						position: 'relative',
-						width: '100%',
-						height: '100vh',
-					}}
-				>
+			<body className={clsx(inter.className, ' scroll')}>
+				<div className='min-h-screen  mx-auto flex flex-col   relative '>
 					<Image
-						src='/phone.png'
+						src='/phonbg.webp'
 						alt='bg'
-						fill={true}
-						priority={true}
-						className='object-cover opacity-[0.8%] fixed left-0 right-0'
+						fill
+						priority
+						className=' bg-cover opacity-[5%] '
+						sizes='(min-width: 500px) 50vw, 100vw'
 					/>
-					<div className='h-full mx-auto flex flex-col justify-between   '>
-						<Providers>
-							<Navbar />
-							<div className='px-[3%] container mx-auto flex flex-col '>
-							
-								{children}
-							</div>
 
-							<Footer />
-						</Providers>
-					</div>
+					<Providers>
+						<Navbar />
+						{children}
+						<Footer />
+					</Providers>
 				</div>
 			</body>
 		</html>

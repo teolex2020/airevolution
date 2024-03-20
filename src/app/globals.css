@@ -12,7 +12,7 @@ html,
 body {
 	max-width: 100vw;
 	overflow-x: hidden;
-	background-color: #13181d;
+	background-color: #0f1016;
 	color: #ffffff;
 	height: 100vh;
 }
@@ -136,17 +136,44 @@ select::-ms-expand {
 	
 @layer utilities {
 	.shadow1 {
-		-webkit-box-shadow: 0px 0px 12px 2px rgba(2, 247, 186, 0.664);
-		-moz-box-shadow: 0px 0px 12px 2px rgba(2, 247, 186, 0.664);
-		box-shadow: 0px 0px 12px 2px rgba(2, 247, 186, 0.664);
+		-webkit-box-shadow: 0px 0px 12px 2px rgb(70,159,194);
+		-moz-box-shadow: 0px 0px 12px 2px rgb(70,159,194);
+		box-shadow: 0px 0px 12px 2px rgb(70,159,194);
+	}
+}    
+@layer utilities {
+	.shadow3 {
+		-webkit-box-shadow: 0px 0px 12px 2px rgb(63,36,61);
+		-moz-box-shadow: 0px 0px 12px 2px rgb(63,36,61);
+		box-shadow: 0px 0px 12px 2px rgb(63,36,61);
 	}
 }    
 
+.animation {
+	box-shadow: 0px 0px 2px 1px rgb(70,159,194); 
+	animation: pulse 3s infinite;
+
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		filter: drop-shadow(0px 0px 3px rgb(70,159,194));
+	}
+	50% {
+		filter: drop-shadow(0px 0px 6px rgb(70,159,194));
+	}
+}
+
 @layer utilities {
 	.bg-blur {
-		background-color: #13181d1f;
-		backdrop-filter: blur(50px);
-		-webkit-backdrop-filter: blur(50px);
+			/* background: linear-gradient(45deg, #161720 50%, #1c1d1f, #161720 50%); */
+		background-color: #d6d3d305;
+		backdrop-filter: blur(15px);
+		-webkit-backdrop-filter: blur(15px);
+	-webkit-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
 	}
 }
 
@@ -167,3 +194,9 @@ height: calc(100vh - 136px);
   left: 0;
 	
 }}
+
+.img {
+	filter: contrast(373%) invert(100%);
+	-webkit-filter: contrast(373%) invert(100%);
+	-moz-filter: contrast(373%) invert(100%); /* 100% інвертовані кольори */
+}
