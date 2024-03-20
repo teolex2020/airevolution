@@ -1,12 +1,12 @@
 'use client'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import Message from './Message'
 import { Gentium_Book_Plus } from 'next/font/google'
-import { useChat } from 'ai/react'
 import { SendHorizontal } from 'lucide-react'
 import GrowingTextArea from './Textarea'
 import Image from 'next/image'
 import {  experimental_useAssistant as useAssistant } from 'ai/react'
+import { motion, useAnimation } from 'framer-motion'
 
 const gentium = Gentium_Book_Plus({
 	weight: '700',
@@ -14,8 +14,6 @@ const gentium = Gentium_Book_Plus({
 })
 
 const Chat = () => {
-	// const { messages, input, handleInputChange, handleSubmit, isLoading, error } =
-	// 	useChat()
 
 		 const {
 				status,
@@ -30,15 +28,34 @@ const Chat = () => {
 
 	const messagesEndRef = useRef(null)
 	 
-	// console.log(messages)
 
-	// console.log('status', status)
 
 	useEffect(() => {
 		messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
 	}, [messages])
 
-	
+
+
+		const fullText = `Hello. I am here to help you unlock the potential of artificial intelligence (AI) and integrate it into various aspects of your business. My goal is to provide you with expert support and advice on how to implement AI in operations, supply chain, customer service, finance, healthcare, and more.
+		I look forward to hearing from you.`
+
+	const variants = {
+		hidden: {
+			opacity: 0,
+			x: -100,
+		},
+		visible: {
+			opacity: 1,
+			x: 0,
+			transition: {
+				duration: 0.5,
+				staggerChildren: 0.1,
+			},
+		},
+	}
+
+	const letters = fullText.split('')
+
 
 	return (
 		<div
@@ -58,7 +75,7 @@ const Chat = () => {
 						<>
 							{!error && messages.length === 0 && (
 								<div
-									className={`flex  flex-col items-center justify-center gap-3 text-center  relative lg:mt- `}
+									className={`flex  flex-col items-center justify-center gap-3 text-center  relative min-h-[600px] `}
 								>
 									<div className='absolute'>
 										<Image
@@ -78,32 +95,20 @@ const Chat = () => {
 									>
 										Empower Your Business with AI-driven Automation
 									</h1>
-									<p className=' text-justify  lg:text-[19px] lg:px-8 py-5 max-w-2xl'>
-										Welcome to the forefront of innovation where artificial
-										intelligence meets enterprise efficiency. Our bespoke AI
-										solutions are designed to propel your business into the
-										future of automation. Experience the transformative power of
-										AI with services tailored to:
-										<br />
-										- Streamline Operations: Our smart systems analyze your
-										workflows to identify and implement the most efficient
-										automation strategies.
-										<br />
-										- Enhance Decision-Making: With data-driven insights, we
-										empower you to make informed decisions that drive growth and
-										profitability.
-										<br />
-										- Boost Productivity: Unlock the full potential of your
-										workforce by offloading routine tasks to our intelligent
-										automation systems. <br />
-										- Secure Competitive Edge: Stay ahead of the curve by
-										adopting cutting-edge AI that keeps your services and
-										products at the pinnacle of your industry. <br />
-										<br />
-										Join us in redefining business excellence. Transform your
-										operations, ignite innovation, and lead the market with
-										confidence. Step into the future-today.
-									</p>
+
+									<div className=' text-justify  lg:text-[19px] lg:px-8 py-5 max-w-2xl'>
+										<motion.div
+											variants={variants}
+											initial='hidden'
+											animate='visible'
+										>
+											{letters.map((letter, i) => (
+												<motion.span key={i} variants={variants}>
+													{letter}
+												</motion.span>
+											))}
+										</motion.div>
+									</div>
 								</div>
 							)}
 						</>
