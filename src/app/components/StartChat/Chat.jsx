@@ -48,7 +48,7 @@ const Chat = () => {
 			opacity: 1,
 			x: 0,
 			transition: {
-				duration: 0.5,
+				duration: 0.7,
 				staggerChildren: 0.1,
 			},
 		},
@@ -75,7 +75,7 @@ const Chat = () => {
 						<>
 							{!error && messages.length === 0 && (
 								<div
-									className={`flex  flex-col items-center justify-center gap-3 text-center  relative min-h-[600px] `}
+									className={`flex  flex-col items-center justify-center gap-3 text-center  relative min-h-[400px] `}
 								>
 									<div className='absolute'>
 										<Image
