@@ -49,7 +49,10 @@ const Chat = () => {
 				<div className='my-6  w-full  pb-4 	'>
 					{messages.length !== 0 ? (
 						messages.map((e, i) => (
-							<Message key={i} role={e.role} content={e.content} />
+							<>
+								<Message key={i} role={e.role} content={e.content} />
+								<div ref={messagesEndRef} />
+							</>
 						))
 					) : (
 						<>
@@ -110,7 +113,7 @@ const Chat = () => {
 							Loading ....
 						</div>
 					)}
-					<div ref={messagesEndRef} />
+
 					<div className='w-full h-full flex justify-center items-center  '>
 						{error?.message}
 					</div>
