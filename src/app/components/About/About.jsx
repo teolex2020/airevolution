@@ -18,6 +18,7 @@ const About = () => {
 					height={500}
 					alt='Picture of the author'
 					className='object-contain rounded-lg'
+					priority
 				/>
 			</div>
 			{data.map((e) => (

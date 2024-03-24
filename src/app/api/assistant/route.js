@@ -4,7 +4,7 @@ import OpenAI from 'openai';
 const keyAPI = process.env.NEXT_PUBLIC_OPENAI_API;
 const openId = process.env.NEXT_PUBLIC_OPENAI_ID
 
-console.log(keyAPI)
+
  
 // Create an OpenAI API client (that's edge friendly!)
 const openai = new OpenAI({

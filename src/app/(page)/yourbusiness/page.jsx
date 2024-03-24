@@ -41,6 +41,7 @@ const YourBusiness = () => {
 										alt='Picture of the author'
 										sizes='(min-width: 808px) 50vw, 100vw'
 										className='object-contain rounded-lg'
+										priority
 									/>
 								</div>
 							</div>

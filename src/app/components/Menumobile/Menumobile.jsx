@@ -5,8 +5,6 @@ import Image from 'next/image'
 import emailjs from '@emailjs/browser'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
-
 import { MobileMenus } from '../../../store/features/counterSlice'
 
 const Menumobile = () => {
@@ -172,6 +170,7 @@ const Menumobile = () => {
 							fill
 							priority
 							className='object-contain '
+							sizes='(min-width: 20px) 50vw, 100vw'
 						/>
 					</div>
 					<p> my Facebook</p>
