@@ -107,7 +107,7 @@ export async function POST(req) {
               }
             },
           );
- console.log("hello")
+
         runResult = await forwardStream(
           openai.beta.threads.runs.submitToolOutputsStream(
             threadId,

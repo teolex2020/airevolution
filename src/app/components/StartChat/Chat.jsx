@@ -1,12 +1,13 @@
 'use client'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import Message from './Message'
 import { Gentium_Book_Plus } from 'next/font/google'
 import { SendHorizontal, Bot } from 'lucide-react'
 import GrowingTextArea from './Textarea'
 import Image from 'next/image'
 import {  experimental_useAssistant as useAssistant } from 'ai/react'
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useChat } from 'ai/react'
 
 const gentium = Gentium_Book_Plus({
 	weight: '700',
@@ -14,6 +15,9 @@ const gentium = Gentium_Book_Plus({
 })
 
 const Chat = () => {
+	 const { messages:messagesvision, input:inputvision, handleInputChange:handleInputChangevision, handleSubmit } = useChat({
+			api: '/api/vision',
+		})
 
 		 const {
 				status,
@@ -49,7 +53,7 @@ const Chat = () => {
 			x: 0,
 			transition: {
 				duration: 0.4,
-				staggerChildren: 0.05,
+				staggerChildren: 0.01,
 			},
 		},
 	}
@@ -95,14 +99,18 @@ const Chat = () => {
 									>
 										Empower Your Business with AI-driven Automation
 									</h1>
-									<Bot
-										size={44}
-										
-										className=''
-									/>
+									<Bot size={44} className='' />
 
 									<div className=' text-justify  lg:text-[19px] lg:px-8 py-5 max-w-2xl'>
-										<motion.div
+										<p>
+											Hello. I am here to help you unlock the potential of
+											artificial intelligence (AI) and integrate it into various
+											aspects of your business. My goal is to provide you with
+											expert support and advice on how to implement AI in
+											operations, supply chain, customer service, finance,
+											healthcare, and more. I look forward to your questions.
+										</p>
+										{/* <motion.div
 											variants={variants}
 											initial='hidden'
 											animate='visible'
@@ -112,7 +120,7 @@ const Chat = () => {
 													{letter}
 												</motion.span>
 											))}
-										</motion.div>
+										</motion.div> */}
 									</div>
 								</div>
 							)}

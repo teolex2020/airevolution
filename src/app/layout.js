@@ -12,7 +12,15 @@ export async function generateMetadata() {
 			default: 'AI consulting services',
 		},
 		openGraph: {
-			images: '/aboutme.webp',
+			title: 'AI consulting services',
+			description: 'AI consulting services',
+			image: '/aboutme.webp',
+		},
+		twitter: {
+
+			title: 'AI consulting services',
+			description: 'AI consulting services',
+			image: '/aboutme.webp',
 		},
 	}
 }
