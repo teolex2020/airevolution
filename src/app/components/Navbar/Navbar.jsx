@@ -65,7 +65,7 @@ const Navbar = () => {
 					<MobileButton />
 				</div>
 				<button
-					className='rounded-full border px-3 py-2 bg-blur border-zinc-600 hover:shadow1 duration-300 text-sm md:text-base absolute right-5 hidden md:block'
+					className='rounded-full border-2 px-3 py-2 bg-blur border-[#12152e] hover:shadow1 duration-300 text-sm md:text-base absolute right-5 hidden md:block'
 					onClick={() => closewindow()}
 				>
 					Contact me

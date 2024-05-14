@@ -32,14 +32,14 @@ export default function RootLayout({ children }) {
 		<html>
 			<body className={clsx(inter.className, ' scroll')}>
 				<div className='min-h-screen  mx-auto flex flex-col   relative '>
-					<Image
+					{/* <Image
 						src='/phonbg.webp'
 						alt='bg'
 						fill
 						priority
 						className=' bg-cover opacity-[5%] '
 						sizes='(min-width: 500px) 50vw, 100vw'
-					/>
+					/> */}
 
 					<Providers>
 						<Navbar />

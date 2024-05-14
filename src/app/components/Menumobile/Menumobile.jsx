@@ -63,7 +63,7 @@ const Menumobile = () => {
 
 	return (
 		<div
-			className={`fixed border-l-2 border-zinc-600 bg-[#1e1f24] top-0 bottom-0  right-0 md:w-96 z-50 ${
+			className={`fixed border-l-2 border-zinc-600 bg-[#0a0c19] top-0 bottom-0  right-0 md:w-96 z-50 ${
 				mobileMenu
 					? 'transition duration-700 ease-in-out translate-x-[100%] '
 					: 'transition duration-700 ease-in-out translate-x-[0%]'
@@ -110,7 +110,7 @@ const Menumobile = () => {
 							onSubmit={sendEmail}
 						>
 							<div className='relative group '>
-								<p className='absolute -top-3 left-4 text-zinc-400   w-16 flex justify-center text-[14px]  bg-[#1e1f24] group-hover:text-[#469fc2]'>
+								<p className='absolute -top-3 left-4 text-zinc-400   w-16 flex justify-center text-[14px]  bg-[#0a0c19] group-hover:text-[#469fc2]'>
 									Name*
 								</p>
 								<input
@@ -123,7 +123,7 @@ const Menumobile = () => {
 								/>
 							</div>
 							<div className='relative group '>
-								<p className='absolute -top-3 left-4 text-zinc-400   w-16 flex justify-center text-[14px]  bg-[#1e1f24] group-hover:text-[#469fc2]'>
+								<p className='absolute -top-3 left-4 text-zinc-400   w-16 flex justify-center text-[14px]  bg-[#0a0c19] group-hover:text-[#469fc2]'>
 									Email*
 								</p>
 								<input
@@ -132,11 +132,11 @@ const Menumobile = () => {
 									name='email'
 									minLength='3'
 									maxLength='50'
-									className='bg-[#1e1f24] !important border border-zinc-500 rounded-sm px-3 outline-none  text-zinc-200 h-12 w-full text-sm  group-hover:border-[#469fc2]  decoration-transparent cursor-pointer'
+									className='bg-[#0a0c19] !important border border-zinc-500 rounded-sm px-3 outline-none  text-zinc-200 h-12 w-full text-sm  group-hover:border-[#469fc2]  decoration-transparent cursor-pointer'
 								/>
 							</div>
 							<div className='relative group '>
-								<p className='absolute -top-3 left-4 text-zinc-400  px-2 w-fit flex justify-center text-[14px]  bg-[#1e1f24] group-hover:text-[#469fc2]'>
+								<p className='absolute -top-3 left-4 text-zinc-400  px-2 w-fit flex justify-center text-[14px]  bg-[#0a0c19] group-hover:text-[#469fc2]'>
 									Message
 								</p>
 								<textarea
