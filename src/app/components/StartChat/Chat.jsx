@@ -93,7 +93,7 @@ const Chat = () => {
 										className='  '
 										sizes='(min-width: 500px) 50vw, 100vw'
 									/>
-									{/* <Bot size={44} className='' /> */}
+								
 
 									<div className=' text-justify  lg:text-[19px] lg:px-8 pb-5 max-w-2xl'>
 										<p>
@@ -109,7 +109,7 @@ const Chat = () => {
 							)}
 						</>
 					)}
-					{messages.map((m) => (
+					{/* {messages.map((m) => (
 						<div
 							key={m.id}
 							className='whitespace-pre-wrap'
@@ -129,7 +129,7 @@ const Chat = () => {
 							<br />
 							<br />
 						</div>
-					))}
+					))} */}
 					{status === 'in_progress' && (
 						<div className='w-full h-full flex justify-center items-center  '>
 							Processing ....
