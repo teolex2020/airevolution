@@ -29,7 +29,7 @@ const Navbar = () => {
 
 	return (
 		<div className=' z-10 bg-blur  relative '>
-			<div className='h-14 px-3 flex justify-around items-center mt-2 container mx-auto sticky  '>
+			<div className='h-14 px-3 flex md:justify-around items-center mt-2 container mx-auto sticky  '>
 				<div className='w-48 hidden md:block'></div>
 				<div className='   '>
 					<ul
