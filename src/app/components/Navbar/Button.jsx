@@ -1,23 +1,21 @@
 'use client'
 import React from 'react'
 import { useRouter } from 'next/navigation'
-import { useSelector,  } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { getAuth, signOut } from 'firebase/auth'
-
-
-
+import { Id, Authuser } from '../../../store/features/counterSlice'
 
 const Button = () => {
-	const {  authUser } = useSelector((state) => state.counter)
-const auth = getAuth()
-console.log(authUser)
-
+	const { authUser } = useSelector((state) => state.counter)
+	const auth = getAuth()
+	const dispatch = useDispatch()
 
 	const router = useRouter()
-	
 
 	const singout = () => {
-	signOut(auth)
+		signOut(auth)
+		dispatch(Authuser(false))
+		dispatch(Id(''))
 	}
 
 	return (

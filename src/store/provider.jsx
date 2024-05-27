@@ -27,8 +27,7 @@ const router = useRouter()
 
 				// Диспатч Redux Action тут
 			} else {
-			dispatch(Authuser(false))
-			dispatch(Id(""))
+		
 				console.log('User is not logged in')
 			}
 		})
