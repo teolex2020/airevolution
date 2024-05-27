@@ -145,7 +145,7 @@ const Chat = () => {
 			<div className='flex flex-col w-full px-3 absolute bottom-0'>
 				<form onSubmit={submitMessage} className={`w-full  `}>
 					<div className='group w-full py-1  flex items-center  bg-white   z-20 elem rounded-xl   relative hover:shadow1 duration-300 '>
-						{!authUser ? (
+						{authUser ? (
 							<>
 								<GrowingTextArea
 									onChange={handleInputChange}
