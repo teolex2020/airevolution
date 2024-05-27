@@ -19,7 +19,7 @@ const router = useRouter()
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
 			if (user) {
-				console.log("user",user)
+			
 				dispatch(Loading(false))
 
 				dispatch(Authuser(user?.emailVerified))
