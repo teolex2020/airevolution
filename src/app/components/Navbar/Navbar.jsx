@@ -72,12 +72,12 @@ const Navbar = () => {
 						<Button />
 					</div>
 
-					<button
+					{/* <button
 						className='rounded-full border-2 px-3 py-2 bg-blur border-[#2a2e57] hover:shadow1 duration-300 text-sm   hidden md:block'
 						onClick={() => closewindow()}
 					>
 						Contact me
-					</button>
+					</button> */}
 				</div>
 			</div>
 			<Href />
