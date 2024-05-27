@@ -4,7 +4,7 @@ import { store, persistor } from './store'
 import { Provider } from 'react-redux'
 import { getAuth } from 'firebase/auth'
 import firebase_app from '../firebase/config'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Authuser, Loading, Id } from './features/counterSlice'
 import { useRouter } from 'next/navigation'
 import { PersistGate } from 'redux-persist/integration/react'
@@ -13,6 +13,7 @@ import Popup from '../app/components/Navbar/Popup'
 import CursorGlow from '../app/components/CursorGlow/CursorGlow'
 
 export const MyComponent = () => {
+	
 	const dispatch = useDispatch()
 	const auth = getAuth(firebase_app)
 const router = useRouter()
@@ -37,12 +38,17 @@ const router = useRouter()
 }
 
 export async function Providers({ children = {} }) {
+	
 	return (
 		<Provider store={store}>
 			<PersistGate loading={null} persistor={persistor}>
 				<CursorGlow />
-				<Popup />
-				< Menumobile/>
+				<div>
+					 <Popup />
+					{/* <Popup /> */}
+				</div>
+
+				<Menumobile />
 				<MyComponent />
 				{children}
 			</PersistGate>
