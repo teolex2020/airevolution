@@ -25,16 +25,16 @@ console.log(authUser)
 			{authUser ? (
 				<button
 					onClick={() => singout()}
-					className={`rounded-full border-2 px-7 py-2 bg-blur border-[#2a2e57] hover:shadow1 duration-300 text-sm md:text-base  right-5 `}
+					className={`rounded-full border-2 px-7 py-2 bg-blur border-[#2a2e57] hover:shadow1 duration-300 text-sm   right-5 `}
 				>
-					<p className='duration-300  text-lg'>Sign Out</p>
+					<p className='duration-300  '>Sign Out</p>
 				</button>
 			) : (
 				<button
 					onClick={() => router.push('/login')}
-					className={`rounded-full border-2 px-7 py-2 bg-blur border-[#2a2e57] hover:shadow1 duration-300 text-sm md:text-base  right-5 `}
+					className={`rounded-full border-2 px-7 py-2 bg-blur border-[#2a2e57] hover:shadow1 duration-300 text-sm  right-5 `}
 				>
-					<p className='duration-300  text-lg'>Sign In</p>
+					<p className='duration-300 '>Sign In</p>
 				</button>
 			)}
 		</div>
