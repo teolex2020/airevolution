@@ -16,12 +16,13 @@ const Popup = () => {
 		dispatch(MobileMenus(mobileMenu))
 		dispatch(PopupMenu(popupmenu))
 	}
-
 	const closepopup = () => {
 		dispatch(PopupMenu(popupmenu))
 	}
-
+	
 	useEffect(() => {
+	
+
 		const handleClickOutside = (event) => {
 			if (
 				popupRef.current &&
@@ -36,14 +37,14 @@ const Popup = () => {
 		return () => {
 			document.removeEventListener('mousedown', handleClickOutside)
 		}
-	}, [popupmenu, popupRef, closepopup])
+	}, [popupmenu, popupRef, closepopup, ])
 
 	return (
 		<div
 			className={`fixed left-0 right-0 bottom-0 top-[66px] z-50 bg-[#0a0c19]/50 ${
 				popupmenu
-					? 'transition duration-700 ease-in-out opacity-100'
-					: 'transition duration-700 ease-in-out opacity-0'
+					? 'transition duration-700 ease-in-out opacity-100 translate-x-[0%]'
+					: 'transition duration-700 ease-in-out opacity-0 translate-x-[100%]'
 			}`}
 		>
 			<div

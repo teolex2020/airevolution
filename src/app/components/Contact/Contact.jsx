@@ -10,7 +10,7 @@ const Contact = () => {
 	}
 
 	return (
-		<div className='fixed right-5 lg:right-[3%] bottom-[5%] z-40'>
+		<div className='absolute right-5 lg:right-[3%] bottom-[15%] md:bottom-[10%] z-40 w-fit'>
 			<button
 				className='rounded-full border-2 px-3 py-2 bg-blur border-[#2a2e57] hover:shadow1      shadow2 hover:scale-105 duration-500 cursor-pointer flex gap-2'
 				onClick={() => closewindow()}
