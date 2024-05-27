@@ -72,7 +72,7 @@ const Menumobile = () => {
 			<div className='absolute left-5 w-14 h-14'>
 				{' '}
 				<Image
-					src='/log.png'
+					src='/logo1.webp'
 					fill
 					alt='logo'
 					priority
@@ -163,9 +163,9 @@ const Menumobile = () => {
 			</div>
 			<div className='flex flex-col gap-5  justify-center py-10'>
 				<a href='https://www.facebook.com/O.Teplyk' className='flex px-5 gap-5'>
-					<div className='flex relative w-5 h-5 sm:w-6 sm:h-6 img'>
+					<div className=' relative w-8 h-8 sm:w-10 sm:h-10 flex item-center '>
 						<Image
-							src='/facebook.png'
+							src='/facebook1.webp'
 							alt=''
 							fill
 							priority
@@ -180,9 +180,9 @@ const Menumobile = () => {
 					href='https://www.linkedin.com/in/alexander-tepliuk-448485161/'
 					className='flex px-5 gap-5'
 				>
-					<div className='relative  w-5 h-5 sm:w-6 sm:h-6 img'>
+					<div className='relative  w-8 h-8 sm:w-10 sm:h-10 flex item-center '>
 						<Image
-							src='/linkedin.png'
+							src='/linkedin1.webp'
 							alt=''
 							fill
 							priority
@@ -196,9 +196,9 @@ const Menumobile = () => {
 					href='https://www.youtube.com/channel/UCyNQ2sIQjmosBFfa-tbT42g'
 					className='flex px-5 gap-5'
 				>
-					<div className=' relative  w-5 h-5 sm:w-6 sm:h-6 img'>
+					<div className=' relative  w-8 h-8 sm:w-10 sm:h-10 flex item-center '>
 						<Image
-							src='/youtube.png'
+							src='/youtube1.webp'
 							alt=''
 							fill
 							priority

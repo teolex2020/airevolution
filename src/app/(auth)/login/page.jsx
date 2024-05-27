@@ -59,7 +59,7 @@ const Login = () => {
 	}
 
 	return (
-		<div className='flex justify-center items-center  h-screen lg:h-full'>
+		<div className='flex justify-center items-center  h-screen md:h-full'>
 			<ToastContainer position='top-right' autoClose={1000} />
 
 			<div className=' flex flex-col gap-3 items-center p-5 '>
@@ -80,20 +80,20 @@ const Login = () => {
 				>
 					<Form className='flex flex-col w-[300px] gap-5 lg:mt-5 '>
 						<div className='relative group '>
-							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
+							<p className='absolute -top-3 left-4 text-slate-400 bg-[#0a0c19] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
 								Електронна пошта
 							</p>
 							<Field
 								name='email'
 								type='email'
-								className='bg-inherit border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-blue-200/80 decoration-transparent '
+								className='bg-inherit border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-blue-200/80 decoration-transparent'
 							/>
 							<ErrorMessage name='email'>
 								{(msg) => <div className='text-red-500 text-sm'>{msg}</div>}
 							</ErrorMessage>
 						</div>
 						<div className='relative group'>
-							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c]  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
+							<p className='absolute -top-3 left-4 text-slate-400 bg-[#0a0c19]  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
 								Пароль
 							</p>
 							<div

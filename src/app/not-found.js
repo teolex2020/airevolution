@@ -8,7 +8,7 @@ export default function NotFound() {
 		<div className='grid place-items-center z-10'>
 			<Link href='/'>
 				<Image
-					src='/notfound.png '
+					src='/notfound.webp '
 					width={500}
 					height={500}
 					alt='not found '

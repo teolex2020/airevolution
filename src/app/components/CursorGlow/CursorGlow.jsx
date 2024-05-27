@@ -25,7 +25,7 @@ const CursorGlow = () => {
 			// Прибирання: видаляємо обробник подій та елемент хмаринки при знищенні компоненту
 			return () => {
 				document.removeEventListener('mousemove', moveGlow)
-				document.body.removeChild(glowElement)
+				document.body?.removeChild(glowElement)
 			}
 		}
 		// Якщо ширина вікна не відповідає умові, компонент не виконує ніяких дій

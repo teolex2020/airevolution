@@ -5,9 +5,9 @@ const Logo = () => {
 	return (
 		<div className='flex flex-col items-center'>
 			{' '}
-			<div className='  w-20 h-14 relative'>
+			<div className='  w-14 h-14 relative'>
 				<Image
-					src='/log.png'
+					src='/logo1.webp'
 					fill
 					alt='logo'
 					priority

@@ -4,6 +4,7 @@ import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { MobileMenus, PopupMenu } from '../../../store/features/counterSlice'
+import Button from './Button'
 
 const Popup = () => {
 	const dispatch = useDispatch()
@@ -19,7 +20,7 @@ const Popup = () => {
 
 	return (
 		<div
-			className={`absolute md:hidden flex flex-col pl-10 right-0 w-72  top-16  shadow2  rounded-md p-5 z-50 bg-blur text-xl gap-5 ${
+			className={`absolute md:hidden flex flex-col pl-10 right-0 w-72  top-[66px]  shadow2   p-5 z-50 bg-[#0a0c19] text-xl gap-10 ${
 				popupmenu
 					? 'transition duration-700 ease-in-out translate-x-[0%] '
 					: 'transition duration-700 ease-in-out translate-x-[100%]'
@@ -51,6 +52,9 @@ const Popup = () => {
 				Contact me
 				<MoveRight />
 			</button>
+			<div className='mt-24 w-full '>
+				<Button />
+			</div>
 		</div>
 	)
 }

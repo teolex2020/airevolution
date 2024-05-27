@@ -19,6 +19,7 @@ const router = useRouter()
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
 			if (user) {
+				console.log("user",user)
 				dispatch(Loading(false))
 
 				dispatch(Authuser(user?.emailVerified))
@@ -26,7 +27,8 @@ const router = useRouter()
 
 				// Диспатч Redux Action тут
 			} else {
-			
+			dispatch(Authuser(false))
+			dispatch(Id(""))
 				console.log('User is not logged in')
 			}
 		})
