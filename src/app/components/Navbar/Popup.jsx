@@ -41,7 +41,7 @@ const Popup = () => {
 
 	return (
 		<div
-			className={`fixed left-0 right-0 bottom-0 top-[66px] z-50 bg-[#0a0c19]/50 ${
+			className={`fixed left-0 right-0 bottom-0 top-[66px] z-50  ${
 				popupmenu
 					? 'transition duration-700 ease-in-out opacity-100 translate-x-[0%]'
 					: 'transition duration-700 ease-in-out opacity-0 translate-x-[100%]'
@@ -55,13 +55,17 @@ const Popup = () => {
 				}`}
 				ref={popupRef}
 			>
-				<Link href='/yourbusiness' className='md:hidden flex'>
+				<Link
+					href='/yourbusiness'
+					className='md:hidden flex'
+					onClick={closepopup}
+				>
 					<div className='flex items-center gap-4 justify-center'>
 						For business
 						<MoveRight />
 					</div>
 				</Link>
-				<Link href='/about' className='md:hidden flex'>
+				<Link href='/about' className='md:hidden flex' onClick={closepopup}>
 					<div className='flex items-center gap-4'>
 						About me
 						<MoveRight />

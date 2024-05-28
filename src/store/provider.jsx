@@ -45,7 +45,7 @@ export async function Providers({ children = {} }) {
 				<CursorGlow />
 				<div>
 					 <Popup />
-					{/* <Popup /> */}
+				
 				</div>
 
 				<Menumobile />
