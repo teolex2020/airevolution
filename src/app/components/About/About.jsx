@@ -65,7 +65,7 @@ const About = () => {
 						/>
 					</div>
 					<div className='text-center pt-2'>
-						<span className='text-lg'>Oleksandr Tepliuk</span> <br />
+						<span className='text-lg'>Alex Zaichenko</span> <br />
 						<span className='text-[11px]'>
 							Program, Manager, CSM ,AI enthusiast, AI Podcast, IT Volunteer
 						</span>

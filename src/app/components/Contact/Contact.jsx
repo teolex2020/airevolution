@@ -55,7 +55,7 @@ const Contact = () => {
 						</g>
 					</svg>
 				</span>
-				Contact me
+				Contact us
 			</button>
 		</div>
 	)
