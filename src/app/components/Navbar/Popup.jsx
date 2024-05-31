@@ -5,6 +5,35 @@ import { useSelector, useDispatch } from 'react-redux'
 import { MobileMenus, PopupMenu } from '../../../store/features/counterSlice'
 import Button from './Button'
 
+const menu = [
+	{
+		id: 1,
+		title: 'Business',
+		href: 'business',
+	},
+
+	{
+		id: 3,
+		title: 'Educators',
+		href: 'educators',
+	},
+	{
+		id: 4,
+		title: 'Politicians',
+		href: 'politicians',
+	},
+	{
+		id: 5,
+		title: 'Healthcare',
+		href: 'healthcare',
+	},
+	{
+		id: 6,
+		title: 'About us',
+		href: 'about',
+	},
+]
+
 const Popup = () => {
 	const dispatch = useDispatch()
 	const popupmenu = useSelector((state) => state.counter.popupmenu)
@@ -55,24 +84,20 @@ const Popup = () => {
 				}`}
 				ref={popupRef}
 			>
-				<Link
-					href='/yourbusiness'
-					className='md:hidden flex'
-					onClick={closepopup}
-				>
-					<div className='flex items-center gap-4 justify-center'>
-						For business
+				{menu.map((e) => (
+					<Link
+						key={e.id}
+						href={`/${e.href}`}
+						className='flex items-center gap-4 '
+						onClick={closepopup}
+					>
+						<li className={`flex `}>{e.title}</li>
 						<MoveRight />
-					</div>
-				</Link>
-				<Link href='/about' className='md:hidden flex' onClick={closepopup}>
-					<div className='flex items-center gap-4'>
-						About me
-						<MoveRight />
-					</div>
-				</Link>
+					</Link>
+				))}
+
 				<button
-					className='flex items-center gap-4'
+					className='flex items-center gap-4 '
 					onClick={() => closewindow()}
 				>
 					Contact me

@@ -20,7 +20,7 @@ const Detail = () => {
 	const back = ()=> {router.back()}
 
 	
-console.log(slug)
+
 
 	if (!detail) {
 		return <div className='flex-1 '>Loading...</div>
