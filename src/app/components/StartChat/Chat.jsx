@@ -110,27 +110,7 @@ const Chat = () => {
 							)}
 						</>
 					)}
-					{/* {messages.map((m) => (
-						<div
-							key={m.id}
-							className='whitespace-pre-wrap'
-							style={{ color: roleToColorMap[m.role] }}
-						>
-							<strong>{`${m.role}: `}</strong>
-							{m.role !== 'data' && m.content}
-							{m.role === 'data' && (
-								<>
-									{m.data.description}
-									<br />
-									<pre className={'bg-gray-200'}>
-										{JSON.stringify(m.data, null, 2)}
-									</pre>
-								</>
-							)}
-							<br />
-							<br />
-						</div>
-					))} */}
+
 					{status === 'in_progress' && (
 						<div className='w-full h-full flex justify-center items-center  '>
 							Processing ....
@@ -146,7 +126,7 @@ const Chat = () => {
 			<div className='flex flex-col w-full px-3 absolute bottom-0'>
 				<form onSubmit={submitMessage} className={`w-full  `}>
 					<div className='group w-full py-1  flex items-center  bg-white   z-40 elem rounded-xl   relative hover:shadow1 duration-300 '>
-						{authUser ? (
+						{!authUser ? (
 							<>
 								<GrowingTextArea
 									onChange={handleInputChange}
@@ -170,14 +150,17 @@ const Chat = () => {
 								</button>{' '}
 							</>
 						) : (
-							<>
+							<div className='relative group w-full   '>
 								<input
 									disabled={true}
 									type='text'
 									className='h-10 text-black px-5 border-none outline-none'
 									placeholder='Please Sign In '
-								></input>
-							</>
+								/>
+								<span className='absolute  top-0  left-2   mb-2 w-fit p-2 bg-red-500  text-white  rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm'>
+									Please sign in to start chatting with the chatbot.
+								</span>
+							</div>
 						)}
 					</div>
 				</form>
