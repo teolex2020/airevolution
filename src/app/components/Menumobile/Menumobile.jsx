@@ -174,7 +174,7 @@ const Menumobile = () => {
 							sizes='(min-width: 20px) 50vw, 100vw'
 						/>
 					</div>
-					<p> my Facebook</p>
+					<p> Facebook</p>
 				</a>
 
 				<a
@@ -191,7 +191,7 @@ const Menumobile = () => {
 							sizes='(min-width: 20px) 50vw, 100vw'
 						/>
 					</div>
-					<p> my Linkedin</p>
+					<p> Linkedin</p>
 				</a>
 				<a
 					href='https://www.youtube.com/channel/UCyNQ2sIQjmosBFfa-tbT42g'
@@ -207,7 +207,7 @@ const Menumobile = () => {
 							sizes='(min-width: 500px) 50vw, 100vw'
 						/>
 					</div>
-					<p> my YouTube</p>
+					<p> YouTube</p>
 				</a>
 			</div>
 		</div>

@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { Gentium_Book_Plus } from 'next/font/google'
 import { test } from './data'
+import Link from 'next/link'
 
 
 const gentium = Gentium_Book_Plus({
@@ -33,7 +34,7 @@ const YourBusiness = () => {
 					>
 						<div className='flex-1 flex w-70 h-auto justify-center relative '>
 							<div className=' p-4 rounded-lg bg-blur flex justify-center items-center animation'>
-								<div className='w-64 md:w-80 h-64 md:h-80 rounded-lg bg-blur animation relative'>
+								<div className='w-64  h-64  rounded-lg bg-blur animation relative'>
 									<Image
 										src={e.image}
 										fill
@@ -48,11 +49,16 @@ const YourBusiness = () => {
 
 						<div className='flex-1 flex flex-col md:items-start  text-[18px]  gap-5 pt-2'>
 							<h2
-								className={`text-2xl md:text-4xl font-semibold ${gentium.className}`}
+								className={`text-2xl md:text-3xl font-semibold ${gentium.className}`}
 							>
 								{e.title}
 							</h2>
-							<p className='text-sm text-justify md:text-xl'>{e.description}</p>
+							<p className='text-sm text-justify md:text-lg'>{e.description}</p>
+							<Link href={`/healthcare/${e.slug}`}>
+								<span className='text-blue-500 hover:underline'>
+									Learn More
+								</span>
+							</Link>
 						</div>
 					</div>
 				))}

@@ -2,20 +2,13 @@
 import { useRef, useEffect } from 'react'
 import Message from './Message'
 import { Gentium_Book_Plus } from 'next/font/google'
-import { SendHorizontal, Bot } from 'lucide-react'
+import { SendHorizontal } from 'lucide-react'
 import GrowingTextArea from './Textarea'
 import Image from 'next/image'
 import { useAssistant } from 'ai/react'
 import { useSelector} from 'react-redux'
 
-const roleToColorMap = {
-	system: 'red',
-	user: 'black',
-	function: 'blue',
-	tool: 'purple',
-	assistant: 'green',
-	data: 'orange',
-}
+
 
 const gentium = Gentium_Book_Plus({
 	weight: '700',
@@ -49,7 +42,7 @@ const Chat = () => {
 
 	return (
 		<div
-			className={` mx-auto flex-1 w-full max-w-4xl  flex flex-col items-center justify-between gap-5 overflow-auto  relative  main-content md:mt-10 `}
+			className={` mx-auto flex-1 w-full max-w-4xl  flex flex-col items-center mt-[2%] gap-5 overflow-auto  relative  main-content  `}
 			style={{ maxHeight: 'calc(100vh - 104px)' }}
 		>
 			<div className='  w-full px-5 lg:px-10  overflow-y-scroll  elem'>
@@ -80,29 +73,37 @@ const Chat = () => {
 
 									<h1
 										className={`
-												text-2xl lg:text-3xl   leading-[1] text-center  flex items-center ${gentium.className} 
+												text-2xl md:text-3xl   leading-[1] text-center  flex items-center ${gentium.className} 
 											`}
 									>
-										Empower Your Business with AI-driven Automation
+										Unlock the Potential of AI for Your Business
 									</h1>
-									<Image
-										src='/bot1.webp'
-										alt='bg'
-										width={50}
-										height={50}
-										className='  '
-										sizes='(min-width: 500px) 50vw, 100vw'
-									/>
-								
+									<h2 className='md:text-xl text-lg font-semibold'>
+										Empower Your Business with AI-Driven Automation and Expert
+										Consulting
+									</h2>
+									<div className='hidden md:block'>
+										{' '}
+										<Image
+											src='/bot1.webp'
+											alt='bg'
+											width={50}
+											height={50}
+											className='  '
+											sizes='(min-width: 500px) 50vw, 100vw'
+										/>
+									</div>
 
 									<div className=' text-justify  lg:text-[19px] lg:px-8 pb-5 max-w-2xl'>
 										<p>
-											Hello. I am here to help you unlock the potential of
-											artificial intelligence (AI) and integrate it into various
-											aspects of your business. My goal is to provide you with
-											expert support and advice on how to implement AI in
-											operations, supply chain, customer service, finance,
-											healthcare, and more. I look forward to your questions.
+											Welcome to the world of Artificial Intelligence! Our team
+											is here to help you unlock the potential of artificial
+											intelligence (AI) and integrate it into various aspects of
+											your business. Our experts will provide you with support
+											and advice on how to implement AI in your operations,
+											supply chain, customer service, finance, healthcare, and
+											more. Ready to transform your business with AI? Contact us
+											today!
 										</p>
 									</div>
 								</div>
@@ -171,7 +172,7 @@ const Chat = () => {
 						) : (
 							<>
 								<input
-								disabled={true}
+									disabled={true}
 									type='text'
 									className='h-10 text-black px-5 border-none outline-none'
 									placeholder='Please Sign In '

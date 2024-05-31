@@ -15,7 +15,7 @@ const About = () => {
 
   return (
 		<div className='flex justify-center items-center mx-auto flex-col gap-5  px-5 container max-w-7xl '>
-			<div className=' flex w-fit gap-3   justify-center relative items-center'>
+			<div className=' flex flex-col md:flex-row w-fit gap-3   justify-center relative items-center'>
 				<div className='flex-col w-64 h-80 p-4 rounded-lg  flex justify-center items-center animation'>
 					<div className='w-48 h-48 rounded-lg bg-blur animation relative'>
 						<Image
@@ -76,7 +76,7 @@ const About = () => {
 			{data.map((e) => (
 				<div key={e.id}>
 					<h2
-						className={`text-3xl text-center text-white font-semibold ${gentium.className}`}
+						className={`text-2xl text-center text-white font-semibold ${gentium.className}`}
 					>
 						{e.title}
 					</h2>

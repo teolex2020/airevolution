@@ -57,7 +57,7 @@ const Navbar = () => {
 	}
 
 	const pathname = usePathname()
-	console.log(pathname)
+
 
 	return (
 		<div className=' z-10 bg-blur  relative '>
