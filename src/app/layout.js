@@ -48,8 +48,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
 
-	const description = "1Cademy Knowledge Graph Public Interface!"
-  const title = "1Cademy Knowledge Graph!"
+	const description = 'AI consulting services'
+  const title = 'AI consulting services'
 
 	return (
 		<html>
