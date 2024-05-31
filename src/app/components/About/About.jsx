@@ -18,8 +18,8 @@ const About = () => {
 			<div className=' flex flex-col md:flex-row w-fit gap-3   justify-center relative items-center'>
 				<a href='https://www.linkedin.com/in/alexander-tepliuk-448485161/'>
 					{' '}
-					<div className='flex-col w-64 h-80 p-4 rounded-lg  flex justify-center items-center animation cursor-pointer'>
-						<div className='w-48 h-48 rounded-lg bg-blur animation relative'>
+					<div className='flex-col w-64 h-80 p-4 rounded-lg  flex justify-start items-center animation cursor-pointer'>
+						<div className='w-44 h-44 rounded-lg bg-blur animation relative'>
 							<Image
 								src='/alex.webp'
 								fill
@@ -39,8 +39,8 @@ const About = () => {
 					</div>
 				</a>
 				<a href='https://www.linkedin.com/in/maximlevitskiy/'>
-					<div className='flex-col w-64 h-80 p-4 rounded-lg  flex justify-center items-center animation cursor-pointer'>
-						<div className='w-48 h-48 rounded-lg bg-blur animation relative'>
+					<div className='flex-col w-64 h-80 p-4 rounded-lg  flex justify-start items-center animation cursor-pointer'>
+						<div className='w-44 h-44 rounded-lg bg-blur animation relative'>
 							<Image
 								src='/max.webp'
 								fill
@@ -59,8 +59,8 @@ const About = () => {
 					</div>
 				</a>
 				<a href='https://www.linkedin.com/in/alex-zaichenko/'>
-					<div className='flex-col w-64 h-80 p-4 rounded-lg  flex justify-center items-center animation cursor-pointer'>
-						<div className='w-48 h-48 rounded-lg bg-blur animation relative'>
+					<div className='flex-col w-64 h-80 p-4 rounded-lg  flex justify-start items-center animation cursor-pointer'>
+						<div className='w-44 h-44 rounded-lg bg-blur animation relative'>
 							<Image
 								src='/olex.webp'
 								fill

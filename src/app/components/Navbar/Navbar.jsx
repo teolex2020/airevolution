@@ -11,6 +11,7 @@ import Button from "./Button"
 
 
 
+
 const gentium = Gentium_Book_Plus({
 	weight: '400',
 	subsets: ['latin'],
@@ -63,10 +64,7 @@ const Navbar = () => {
 		<div className=' z-10 bg-blur  relative '>
 			<div className='h-14 px-3 flex md:justify-around items-center mt-2 container mx-auto sticky  '>
 				<div className='flex items-center gap-5  '>
-					<Link
-						href='/'
-						className='text-bold text-3xl hover:scale-x-[-1] duration-500'
-					>
+					<Link href='/' className='text-bold text-3xl  duration-500'>
 						<Logo />
 					</Link>
 
@@ -89,8 +87,13 @@ const Navbar = () => {
 					<MobileButton />
 				</div>
 				<div className='flex gap-3 '>
-					<div className='hidden md:block'>
-						{' '}
+					<div className='hidden md:flex gap-3'>
+						<button
+							className={`rounded-full border-2 px-4 py-2 bg-blur border-[#2a2e57] hover:shadow1 duration-300 text-sm   right-5 `}
+							onClick={() => closewindow()}
+						>
+							Contact us
+						</button>
 						<Button />
 					</div>
 				</div>
