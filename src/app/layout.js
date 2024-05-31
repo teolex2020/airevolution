@@ -47,15 +47,29 @@ export async function generateMetadata() {
 const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
+
+	const description = "1Cademy Knowledge Graph Public Interface!"
+  const title = "1Cademy Knowledge Graph!"
+
 	return (
 		<html>
 			<head>
-				
+				<title>aintelligence.tech/</title>
+				<meta name='robots' content='follow, index' />
+				<meta name='description' content={description} />
+				<meta property='og:site_name' content='aintelligence.tech/' />
+				<meta property='og:url' content='https://www.aintelligence.tech' />
+				<meta property='og:type' content='website' />
+				<meta property='og:title' content={title} />
+				<meta name='twitter:description' content={description} />
+				<meta name='twitter:title' content={title} />
+				<meta name='docsearch:version' content='master' />
+				<meta property='og:image' content="https://www.aintelligence.tech/_next/image?url=%2Fstep.webp&w=1080&q=75" />
 			</head>
 			<body className={clsx(inter.className, ' scroll')}>
 				<div className='min-h-screen  mx-auto flex flex-col justify-between  relative '>
 					<Providers>
-						<Contact/>
+						<Contact />
 						<Navbar />
 						{children}
 						<Footer />
