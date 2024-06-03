@@ -158,7 +158,7 @@ const Chat = () => {
 									placeholder='Please Sign In '
 								/>
 								<span className='absolute  top-0  left-2   mb-2 w-fit p-2 bg-red-500  text-white  rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm'>
-									Please sign in to start chatting with the chatbot.
+									Please sign in.
 								</span>
 							</div>
 						)}

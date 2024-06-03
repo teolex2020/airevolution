@@ -64,7 +64,7 @@ const Menumobile = () => {
 	return (
 		
 		<div
-			className={`fixed border-l-2 border-zinc-600 bg-[#0a0c19] top-0 bottom-0  right-0 md:w-96 z-50 ${
+			className={`fixed h-screen overflow-scroll border-l-2 border-zinc-600 bg-[#0a0c19] top-0 bottom-0  right-0 md:w-96 z-50 ${
 				mobileMenu
 					? 'transition duration-700 ease-in-out translate-x-[100%] '
 					: 'transition duration-700 ease-in-out translate-x-[0%]'
