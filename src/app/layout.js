@@ -15,7 +15,13 @@ export async function generateMetadata() {
 		openGraph: {
 			title: 'AI consulting services',
 			description: 'AI consulting services',
-			image: '/aboutme.webp',
+			images: [
+				{
+					url: 'https://www.aintelligence.tech/_next/image?url=%2Feducators1.webp&w=384&q=75',
+					width: 600,
+					height: 600,
+				},
+			],
 			siteName: 'AI consulting services',
 			url: 'https://www.aintelligence.tech',
 		},
