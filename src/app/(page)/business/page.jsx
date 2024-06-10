@@ -6,6 +6,8 @@ import Link from 'next/link'
 import { test } from './data'
 
 
+
+
 const gentium = Gentium_Book_Plus({
 	weight: '700',
 	subsets: ['latin'],

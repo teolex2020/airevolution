@@ -15,17 +15,17 @@ const About = () => {
 
   return (
 		<div className='flex justify-center items-center mx-auto flex-col gap-5  px-5 container max-w-7xl '>
-			<div className=' flex flex-col md:flex-row w-fit gap-3   justify-center relative items-center'>
+			<div className=' flex flex-col md:flex-row w-fit gap-3   justify-center relative items-center '>
 				<a href='https://www.linkedin.com/in/alexander-tepliuk-448485161/'>
 					{' '}
-					<div className='flex-col w-64 h-80 p-4 rounded-lg  flex justify-start items-center animation cursor-pointer'>
-						<div className='w-44 h-44 rounded-lg bg-blur animation relative'>
+					<div className='flex-col w-64 h-80 p-4 rounded-xl  flex justify-start items-center animation cursor-pointer'>
+						<div className='w-44 h-44 rounded-xl bg-blur animation relative'>
 							<Image
 								src='/alex.webp'
 								fill
 								alt='Picture of the author'
 								sizes='(min-width: 808px) 50vw, 100vw'
-								className='object-cover rounded-lg'
+								className='object-cover rounded-xl'
 								priority
 							/>
 						</div>
@@ -39,14 +39,14 @@ const About = () => {
 					</div>
 				</a>
 				<a href='https://www.linkedin.com/in/maximlevitskiy/'>
-					<div className='flex-col w-64 h-80 p-4 rounded-lg  flex justify-start items-center animation cursor-pointer'>
-						<div className='w-44 h-44 rounded-lg bg-blur animation relative'>
+					<div className='flex-col w-64 h-80 p-4 rounded-xl  flex justify-start items-center animation cursor-pointer'>
+						<div className='w-44 h-44 rounded-xl bg-blur animation relative'>
 							<Image
 								src='/max.webp'
 								fill
 								alt='Picture of the author'
 								sizes='(min-width: 808px) 50vw, 100vw'
-								className='object-cover rounded-lg'
+								className='object-cover rounded-xl'
 								priority
 							/>
 						</div>
@@ -59,14 +59,14 @@ const About = () => {
 					</div>
 				</a>
 				<a href='https://www.linkedin.com/in/alex-zaichenko/'>
-					<div className='flex-col w-64 h-80 p-4 rounded-lg  flex justify-start items-center animation cursor-pointer'>
-						<div className='w-44 h-44 rounded-lg bg-blur animation relative'>
+					<div className='flex-col w-64 h-80 p-4 rounded-xl  flex justify-start items-center animation cursor-pointer'>
+						<div className='w-44 h-44 rounded-xl bg-blur animation relative'>
 							<Image
 								src='/olex.webp'
 								fill
 								alt='Picture of the author'
 								sizes='(min-width: 808px) 50vw, 100vw'
-								className='object-cover rounded-lg'
+								className='object-cover rounded-xl'
 								priority
 							/>
 						</div>
