@@ -62,7 +62,6 @@ const Menumobile = () => {
 	}
 
 	return (
-		
 		<div
 			className={`fixed h-screen overflow-scroll border-l-2 border-zinc-600 bg-[#0a0c19] top-0 bottom-0  right-0 md:w-96 z-50 ${
 				mobileMenu
@@ -120,7 +119,7 @@ const Menumobile = () => {
 									required
 									minLength='3'
 									maxLength='50'
-									className='bg-transparent border border-zinc-500 rounded-sm px-3 outline-none  text-zinc-200 h-12 w-full text-sm  group-hover:border-[#469fc2]  decoration-transparent cursor-pointer'
+									className='bg-[#0a0c19] border border-zinc-500 rounded-sm px-3 outline-none  text-zinc-200 h-12 w-full text-sm  group-hover:border-[#469fc2]  decoration-transparent cursor-pointer'
 								/>
 							</div>
 							<div className='relative group '>

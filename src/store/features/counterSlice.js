@@ -25,7 +25,7 @@ export const dataSlice = createSlice({
 			state.language = action.payload
 		},
 		PopupMenu: (state, action) => {
-			state.popupmenu = !action.payload
+			state.popupMenu = !action.payload
 		},
 		Id: (state, action) => {
 			state.id = action.payload

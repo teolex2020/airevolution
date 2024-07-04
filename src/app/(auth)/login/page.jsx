@@ -59,7 +59,7 @@ const Login = () => {
 	}
 
 	return (
-		<div className='flex justify-center items-center  h-screen md:h-full'>
+		<div className='flex justify-center items-center  h-screen '>
 			<ToastContainer position='top-right' autoClose={1000} />
 
 			<div className=' flex flex-col gap-3 items-center p-5 '>
