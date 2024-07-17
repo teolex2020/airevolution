@@ -26,6 +26,7 @@ export const dataSlice = createSlice({
 		},
 		PopupMenu: (state, action) => {
 			state.popupMenu = !action.payload
+			
 		},
 		Id: (state, action) => {
 			state.id = action.payload

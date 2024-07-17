@@ -36,7 +36,7 @@ const menu = [
 
 const Popup = () => {
 	const dispatch = useDispatch()
-	const popupmenu = useSelector((state) => state.counter.popupmenu)
+	const popupmenu = useSelector((state) => state.counter.popupMenu)
 	const mobileMenu = useSelector((state) => state.counter.mobileMenu)
 
 	const popupRef = useRef()

@@ -82,8 +82,7 @@ const Navbar = () => {
 						))}
 					</ul>
 				</div>
-				<div className='absolute right-5 md:hidden block'>
-					{' '}
+				<div className='absolute right-5 md:hidden block z-50'>
 					<MobileButton />
 				</div>
 				<div className='flex gap-3 '>
