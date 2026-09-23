@@ -20,7 +20,7 @@ const homeTemperatures = {
 
 export async function POST(req) {
   // Parse the request body
-  const input= await req.json();
+  const input = await req.json();
 
   // Create a thread if needed
   const threadId = input.threadId ?? (await openai.beta.threads.create({})).id;

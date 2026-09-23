@@ -27,6 +27,8 @@ const Chat = () => {
 		stop,
 	} = useAssistant({ api: '/api/assistant' })
 
+	console.log(messages)
+
 	const inputRef = useRef(null)
 	useEffect(() => {
 		if (status === 'awaiting_message') {

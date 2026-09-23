@@ -32,26 +32,29 @@ const Message = ({ role, content, assis}) => {
 						code({ inline, className, children, ...props }) {
 							const match = /language-(\w+)/.exec(className || 'language-js')
 							return !inline ? (
-								<SyntaxHighlighter
-									{...props}
-									PreTag='div'
-									language={match[1]}
-									style={dark}
-									wrapLines={true}
-									wrapLongLines={true}
-								>
-									{String(children).replace(/\n$/, '')}
-								</SyntaxHighlighter>
+								<div className='overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg'>
+									<SyntaxHighlighter
+										{...props}
+										PreTag='div'
+										language={match[1]}
+										style={dark}
+										wrapLines={true}
+										wrapLongLines={true}
+									>
+										{String(children).replace(/\n$/, '')}
+									</SyntaxHighlighter>
+								</div>
 							) : (
-								<code {...props} className={className}>
+								<code
+									{...props}
+									className={`bg-black/10 rounded-lg p-1 ${className}`}
+								>
 									{children}
 								</code>
 							)
 						},
 					}}
-				>
-					{content}
-				</ReactMarkdown>
+				/>
 			</div>
 		</div>
 	)
